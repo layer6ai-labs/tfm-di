@@ -1,0 +1,8 @@
+# Quick test for binary evaluation
+# 2 members + 2 non-members
+
+name: binary_test
+data: all
+
+num_members: 2
+num_non_members: 2

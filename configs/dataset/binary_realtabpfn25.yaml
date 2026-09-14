@@ -1,0 +1,7 @@
+# RealTabPFN-2.5 evaluation pool
+# 20 members (OpenML real-data training datasets) + 51 non-members (TabArena held-out)
+name: binary_realtabpfn25
+data: openml
+num_members: 20
+num_non_members: 51
+test_size: 0.3

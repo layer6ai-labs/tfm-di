@@ -1,0 +1,14 @@
+# Default experiment configuration
+name: default
+description: Default DI experiment
+
+# Run multiple seeds for robustness
+num_runs: 1
+seeds: [42]
+
+# Parallel execution
+n_jobs: 1  # Number of parallel jobs (-1 for all cores)
+
+# Result aggregation
+aggregate_results: false  # Aggregate over multiple runs
+compute_statistics: true   # Compute mean, std, etc.

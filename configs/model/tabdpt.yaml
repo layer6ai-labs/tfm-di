@@ -1,0 +1,14 @@
+model: tabdpt
+
+# Class definitions with import paths and metadata
+classifier:
+  class_name: TabDPTClassifier
+  import_path: tabdpt.TabDPTClassifier
+  has_download_weights: true
+  default_weight_path: null  # will be downloaded on first use
+
+regressor:
+  class_name: TabDPTRegressor
+  import_path: tabdpt.TabDPTRegressor
+  has_download_weights: true
+  default_weight_path: null

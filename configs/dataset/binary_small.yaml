@@ -1,0 +1,8 @@
+# Small binary evaluation dataset
+# 10 members + 10 non-members
+
+name: binary_small
+data: all
+
+num_members: 10
+num_non_members: 10

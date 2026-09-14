@@ -1,0 +1,16 @@
+model: realtabpfn
+
+# RealTabPFN model. The wrapper delegates to the upstream `tabpfn` package,
+# so no local weights are needed.
+classifier:
+  class_name: RealTabPFNClassifier
+  import_path: di.datasets.tabpfn2_wrapper:RealTabPFNClassifier
+  has_download_weights: false
+  default_weight_path: null
+
+# RealTabPFN does not support regression tasks, so this is just a placeholder.
+regressor:
+  class_name: RealTabPFNRegressor
+  import_path: di.datasets.tabpfn2_wrapper:RealTabPFNRegressor
+  has_download_weights: false
+  default_weight_path: null

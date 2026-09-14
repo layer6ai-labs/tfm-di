@@ -1,0 +1,9 @@
+# Quick test for binary evaluation on T4 datasets
+# 2 members + 2 non-members
+
+name: binary_openml_test
+data: openml
+
+num_members: 2
+num_non_members: 2
+test_size: 0.3

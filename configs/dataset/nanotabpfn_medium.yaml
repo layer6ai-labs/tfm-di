@@ -1,0 +1,7 @@
+# Medium DI config for NanoTabPFN — 1000 + 1000 synthetic datasets
+# (4% of the 50k/50k train/holdout classification corpus)
+name: nanotabpfn_medium
+num_members: 1000
+num_non_members: 1000
+data: synthetic
+test_size: 0.3

@@ -1,0 +1,22 @@
+model: tabdpt_seed123
+# Borrow tabdpt's member/non-member dataset list (same training corpus,
+# different seed) when run_di.py picks datasets to attack.
+dataset_selection_model: tabdpt
+
+# TabDPT trained with seed=123. Auto-downloaded from HF on first use if the
+# local safetensors file is not present.
+classifier:
+  class_name: TabDPTClassifier
+  import_path: tabdpt.TabDPTClassifier
+  has_download_weights: false
+  default_weight_path: runs/production/production_seed123/model.safetensors
+  hf_repo: dwahdany/tfms
+  hf_path: tabdpt/seed123/model.safetensors
+
+regressor:
+  class_name: TabDPTRegressor
+  import_path: tabdpt.TabDPTRegressor
+  has_download_weights: false
+  default_weight_path: runs/production/production_seed123/model.safetensors
+  hf_repo: dwahdany/tfms
+  hf_path: tabdpt/seed123/model.safetensors

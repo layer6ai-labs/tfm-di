@@ -1,0 +1,16 @@
+model: nanotabpfn
+
+# Class definitions with import paths and metadata
+classifier:
+  class_name: NanoTabPFNClassifierWrapper
+  import_path: di.datasets.nanotabpfn_wrapper:NanoTabPFNClassifierWrapper
+  has_download_weights: false
+  default_weight_path: models/nanotabpfn/classifier.pt
+  hf_repo: dwahdany/tfms
+  hf_path: nanotabpfn/classifier.pt
+
+regressor:
+  class_name: NanoTabPFNRegressorWrapper
+  import_path: di.datasets.nanotabpfn_wrapper:NanoTabPFNRegressorWrapper
+  has_download_weights: false
+  default_weight_path: models/nanotabpfn/regressor.pt

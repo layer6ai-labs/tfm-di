@@ -1,0 +1,7 @@
+# Large DI config for NanoTabPFN — 10000 + 10000 synthetic datasets
+# (40% of the 50k/50k train/holdout classification corpus)
+name: nanotabpfn_large
+num_members: 10000
+num_non_members: 10000
+data: synthetic
+test_size: 0.3

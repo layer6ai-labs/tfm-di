@@ -1,0 +1,16 @@
+model: realtabpfn25
+
+# RealTabPFN-2.5  model. Used as a "blind" baseline against which the
+# trained TFMs (TabDPT, sap-rpt-oss, NanoTabPFN) are compared. The wrapper
+# delegates to the upstream `tabpfn` package, so no local weights are needed.
+classifier:
+  class_name: RealTabPFN25Classifier
+  import_path: di.datasets.tabpfn25_wrapper:RealTabPFN25Classifier
+  has_download_weights: false
+  default_weight_path: null
+
+regressor:
+  class_name: RealTabPFN25Regressor
+  import_path: di.datasets.tabpfn25_wrapper:RealTabPFN25Regressor
+  has_download_weights: false
+  default_weight_path: null

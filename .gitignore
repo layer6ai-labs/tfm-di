@@ -1,0 +1,22 @@
+__pycache__/
+.cache
+.venv/
+eval_output/
+data/
+.claude/
+experiments/
+figures/
+plots/
+tfm_di.egg-info/
+*.json
+# Model checkpoints
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+models/
+*.parquet
+slurm_cache/
+slurm_logs/
+.env
+docs/

@@ -1,0 +1,23 @@
+model: tabdpt_split1
+# Borrow tabdpt's member/non-member dataset list by default. If/when
+# split-specific membership lists are wired into dataset_selection, switch
+# this to a split-aware key.
+dataset_selection_model: tabdpt
+
+# TabDPT trained on split1 of the member-inference partition.
+# Auto-downloaded from HF on first use if the local safetensors is missing.
+classifier:
+  class_name: TabDPTClassifier
+  import_path: tabdpt.TabDPTClassifier
+  has_download_weights: false
+  default_weight_path: runs/member_inference/split1/model.safetensors
+  hf_repo: dwahdany/tfms
+  hf_path: tabdpt/split1/model.safetensors
+
+regressor:
+  class_name: TabDPTRegressor
+  import_path: tabdpt.TabDPTRegressor
+  has_download_weights: false
+  default_weight_path: runs/member_inference/split1/model.safetensors
+  hf_repo: dwahdany/tfms
+  hf_path: tabdpt/split1/model.safetensors
