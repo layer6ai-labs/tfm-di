@@ -197,7 +197,7 @@ def run_grid_attack(dataset_id, true_label: int, model_name: str,
             weight_path = ensure_local_weights(
                 local_path=weight_path,
                 hf_path=hf_path,
-                hf_repo=hf_repo or "dwahdany/tfms",
+                hf_repo=hf_repo,
             )
 
         if model_class is None:

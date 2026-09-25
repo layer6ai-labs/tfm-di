@@ -11,7 +11,7 @@ classifier:
   import_path: tabdpt.TabDPTClassifier
   has_download_weights: false
   default_weight_path: runs/member_inference/split2/model.safetensors
-  hf_repo: dwahdany/tfms
+  hf_repo: tfms
   hf_path: tabdpt/split2/model.safetensors
 
 regressor:
@@ -19,5 +19,5 @@ regressor:
   import_path: tabdpt.TabDPTRegressor
   has_download_weights: false
   default_weight_path: runs/member_inference/split2/model.safetensors
-  hf_repo: dwahdany/tfms
+  hf_repo: tfms
   hf_path: tabdpt/split2/model.safetensors

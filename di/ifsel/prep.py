@@ -20,7 +20,7 @@ REPO = AUDIT_REPO
 OUT = CACHE
 SNAP = os.environ.get(
     "TFMS_SNAPSHOT",
-    ".hf_hub_cache/models--dwahdany--tfms/snapshots/"
+    ".hf_hub_cache/models--tfms/snapshots/"
     "28723d00fcdf35610efe04dbcc54f1dda3d50d33/signals")
 NON_FEATURES = {"true_label", "is_member", "member", "dataset_id", "dataset_name",
                 "success", "task_type", "grid_version", "iid_split", "did",

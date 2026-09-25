@@ -1,10 +1,5 @@
 <div align="center">
 
-<a href="https://layer6.ai/"><img src="./assets/layer6.jpg" height="66"></a>
-<a href="https://sprintml.com/"><img src="./assets/sprintml.jpg" height="60"></a>
-
-[![arXiv](https://img.shields.io/badge/arXiv-2609.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2609.XXXXX)
-
 # TFM Dataset Inference
 
 </div>
@@ -146,22 +141,7 @@ The parquet pair is emitted for every model.
 ### Multi-Model Variants
 
 In addition to the base configs, the following Hydra model configs are
-available out-of-the-box. All non-default weights are auto-downloaded from the
-[`dwahdany/tfms`](https://huggingface.co/dwahdany/tfms) HuggingFace repo on
-first use (no extra steps — the HF cache handles it):
-
-## Citation
-
-If you find this repository useful, please cite the paper as follows
-
-```bibtex
-@article{huang2026unifying,
-      title={Dataset Inference for Data Provenance and Privacy Auditing in Tabular Foundation Models}, 
-      author={Dariush Wahdany and Jesse C. Cresswell and Naiqing Guan and Atiyeh Ashari Ghomi and Franziska Boenisch and Adam Dziedzic},
-      year={2026},
-      journal={arXiv:2609.XXXXX}
-}
-```
+available out-of-the-box.
 
 ## License
 

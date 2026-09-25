@@ -1,7 +1,7 @@
 """Helpers for resolving model checkpoints (local → Hugging Face fallback).
 
 Every non-base model variant in this repo (TabDPT seed/split variants,
-NanoTabPFN classifier) ships its weights from the ``dwahdany/tfms`` HF
+NanoTabPFN classifier) ships its weights from the ``tfms`` HF
 repo. ``ensure_local_weights`` returns a usable filesystem path,
 downloading from HF on first use and caching under the default HF cache
 afterwards. Once the file is on disk the function is a no-op.
@@ -12,7 +12,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional
 
-DEFAULT_HF_REPO = "dwahdany/tfms"
+DEFAULT_HF_REPO = "tfms"
 
 
 def ensure_local_weights(
@@ -31,7 +31,7 @@ def ensure_local_weights(
         Path of the file inside ``hf_repo``. Required for the download
         fallback; if unset and ``local_path`` does not exist, this raises.
     hf_repo :
-        Hugging Face repository id. Defaults to ``dwahdany/tfms``.
+        Hugging Face repository id. Defaults to ``tfms``.
     """
     if local_path is not None:
         p = Path(local_path)

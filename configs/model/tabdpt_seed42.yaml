@@ -10,7 +10,7 @@ classifier:
   import_path: tabdpt.TabDPTClassifier
   has_download_weights: false
   default_weight_path: runs/production/production_seed42/model.safetensors
-  hf_repo: dwahdany/tfms
+  hf_repo: tfms
   hf_path: tabdpt/seed42/model.safetensors
 
 regressor:
@@ -18,5 +18,5 @@ regressor:
   import_path: tabdpt.TabDPTRegressor
   has_download_weights: false
   default_weight_path: runs/production/production_seed42/model.safetensors
-  hf_repo: dwahdany/tfms
+  hf_repo: tfms
   hf_path: tabdpt/seed42/model.safetensors
