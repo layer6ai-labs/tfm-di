@@ -1,0 +1,12 @@
+# Real-TabPFN-2.5 natural-regression datasets probed as classification tasks (allcls arm).
+# 2 members + 13 non-members (TabArena), the 15 regression datasets of the published
+# binary_realtabpfn25 pool. All ids are OpenML dataset ids.
+name: realtabpfn25_regression_allcls
+data: openml
+test_size: 0.3
+force_task_type: classification
+non_member_is_task_id: false
+
+member_ids: [43617, 44201]
+non_member_ids: [46904, 46907, 46917, 46923, 46928, 46931, 46934, 46942, 46949, 46953,
+                 46954, 46961, 46964]

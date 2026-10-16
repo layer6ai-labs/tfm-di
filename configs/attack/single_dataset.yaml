@@ -1,0 +1,14 @@
+# Single dataset attack configuration
+
+name: single_dataset
+type: single  # single or comparative
+
+# TabDPT model parameters
+model:
+  n_ensembles: 8
+  temperature: 0.8
+  context_size: 2048
+
+# Attack-specific parameters
+params:
+  max_samples: null  # null for all samples, or specify a limit

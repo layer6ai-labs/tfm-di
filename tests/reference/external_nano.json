@@ -1,0 +1,36 @@
+{
+ "nano": [
+  {
+   "pool": "nano",
+   "arm": "ALL",
+   "n_cols": 678,
+   "target_cov": 0.9997,
+   "blind_cov": 0.9997,
+   "meta_only_auc": 0.5,
+   "noscreen": {
+    "target_auc": 0.5008,
+    "blind_auc": 0.5059,
+    "gap": -0.0051,
+    "n_selected": 678,
+    "tpr@0.1": 0.1003,
+    "fpr@0.1": 0.1007,
+    "target_auc_sd": 0.0015,
+    "blind_auc_sd": 0.0033,
+    "gap_sd": 0.0024,
+    "draws": 10
+   },
+   "screen": {
+    "target_auc": 0.5019,
+    "blind_auc": 0.5023,
+    "gap": -0.0004,
+    "n_selected": 6,
+    "tpr@0.1": 0.0911,
+    "fpr@0.1": 0.0879,
+    "target_auc_sd": 0.0112,
+    "blind_auc_sd": 0.0031,
+    "gap_sd": 0.0103,
+    "draws": 10
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "sap": [
+  {
+   "pool": "sap",
+   "arm": "ALL",
+   "n_cols": 623,
+   "target_cov": 0.9878,
+   "blind_cov": 0.8387,
+   "meta_only_auc": 0.9656,
+   "noscreen": {
+    "target_auc": 0.6293,
+    "blind_auc": 0.4385,
+    "gap": 0.1908,
+    "n_selected": 623,
+    "tpr@0.1": 0.0929,
+    "fpr@0.1": 0.103,
+    "target_auc_sd": 0.0296,
+    "blind_auc_sd": 0.0099,
+    "gap_sd": 0.0289,
+    "draws": 10
+   },
+   "screen": {
+    "target_auc": 0.6517,
+    "blind_auc": 0.4418,
+    "gap": 0.2099,
+    "n_selected": 477,
+    "tpr@0.1": 0.104,
+    "fpr@0.1": 0.101,
+    "target_auc_sd": 0.041,
+    "blind_auc_sd": 0.013,
+    "gap_sd": 0.0453,
+    "draws": 10
+   }
+  }
+ ]
+}

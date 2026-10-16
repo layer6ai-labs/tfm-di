@@ -1,0 +1,36 @@
+{
+ "tabdpt": [
+  {
+   "pool": "tabdpt",
+   "arm": "ALL",
+   "n_cols": 678,
+   "target_cov": 0.9949,
+   "blind_cov": 0.9036,
+   "meta_only_auc": 0.5656,
+   "noscreen": {
+    "target_auc": 0.5701,
+    "blind_auc": 0.4636,
+    "gap": 0.1064,
+    "n_selected": 678,
+    "tpr@0.1": 0.1205,
+    "fpr@0.1": 0.0792,
+    "target_auc_sd": 0.0423,
+    "blind_auc_sd": 0.0269,
+    "gap_sd": 0.0311,
+    "draws": 10
+   },
+   "screen": {
+    "target_auc": 0.5825,
+    "blind_auc": 0.4721,
+    "gap": 0.1104,
+    "n_selected": 26,
+    "tpr@0.1": 0.1125,
+    "fpr@0.1": 0.066,
+    "target_auc_sd": 0.0597,
+    "blind_auc_sd": 0.0539,
+    "gap_sd": 0.0432,
+    "draws": 6
+   }
+  }
+ ]
+}

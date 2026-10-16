@@ -1,0 +1,16 @@
+# TabDPT natural-regression datasets probed as classification tasks (allcls arm).
+# 29 members (TabDPT training set, OpenML dataset ids) + 35 non-members (CTR23 task ids),
+# the 64 regression datasets of the published TabDPT grid.
+name: tabdpt_regression_allcls
+data: openml
+test_size: 0.3
+force_task_type: classification
+non_member_is_task_id: true
+
+member_ids: [3050, 3277, 4549, 41540, 41980, 42563, 42572, 42705, 42724, 42727, 42728,
+             42730, 43071, 44055, 44056, 44061, 44063, 44065, 44068, 44069, 44136, 44137,
+             44145, 45032, 45041, 45043, 45045, 45046, 45047]
+non_member_ids: [361234, 361235, 361236, 361237, 361241, 361242, 361243, 361244, 361247,
+                 361249, 361250, 361251, 361252, 361253, 361254, 361255, 361256, 361257,
+                 361258, 361259, 361260, 361261, 361264, 361266, 361267, 361268, 361269,
+                 361272, 361616, 361617, 361618, 361619, 361621, 361622, 361623]

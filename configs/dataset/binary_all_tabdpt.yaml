@@ -1,0 +1,8 @@
+# All TabDPT datasets for binary evaluation
+# 123 members + 72 non-members
+
+name: binary_all
+data: all
+
+num_members: 123   # All available members
+num_non_members: 107  # All available non-members (CC18 + CTR23)

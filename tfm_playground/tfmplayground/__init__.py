@@ -1,0 +1,1 @@
+from tfmplayground.interface import NanoTabPFNClassifier, NanoTabPFNRegressor

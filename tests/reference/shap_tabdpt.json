@@ -1,0 +1,2957 @@
+{
+ "tabdpt": {
+  "meta": {
+   "pool": "tabdpt",
+   "n": 224,
+   "n_member": 117,
+   "scope": "ALL",
+   "n_cols": 678,
+   "folds": 5,
+   "top": 10
+  },
+  "target_top": [
+   {
+    "column": "ctx_kl2clean_late_gain",
+    "feature": "RowSampling_KLDClean_LateGain",
+    "manipulation": "M4",
+    "signal": "S12",
+    "reduction": "R6",
+    "target": 0.2203,
+    "blind": 0.0559,
+    "target_rank": 1,
+    "blind_rank": 28
+   },
+   {
+    "column": "noise_kl_divergence_early",
+    "feature": "FeatureNoise_KLD_Early",
+    "manipulation": "M8",
+    "signal": "S12",
+    "reduction": "R5",
+    "target": 0.171,
+    "blind": 0.0074,
+    "target_rank": 2,
+    "blind_rank": 228
+   },
+   {
+    "column": "tserum_correct_confidence_early",
+    "feature": "TruthSerum_Confidence_Early",
+    "manipulation": "M15",
+    "signal": "S1",
+    "reduction": "R5",
+    "target": 0.1573,
+    "blind": 0.0359,
+    "target_rank": 3,
+    "blind_rank": 48
+   },
+   {
+    "column": "rowdup_chi_squared_early",
+    "feature": "RowDuplication_ChiSquared_Early",
+    "manipulation": "M14",
+    "signal": "S10",
+    "reduction": "R5",
+    "target": 0.1523,
+    "blind": 0.0077,
+    "target_rank": 4,
+    "blind_rank": 221
+   },
+   {
+    "column": "col_kl_divergence_auc",
+    "feature": "FeatureSample_KLD_AUC",
+    "manipulation": "M6",
+    "signal": "S12",
+    "reduction": "R3",
+    "target": 0.1504,
+    "blind": 0.0747,
+    "target_rank": 5,
+    "blind_rank": 21
+   },
+   {
+    "column": "col_kl_divergence_slope",
+    "feature": "FeatureSample_KLD_Slope",
+    "manipulation": "M6",
+    "signal": "S12",
+    "reduction": "R2",
+    "target": 0.1427,
+    "blind": 0.0885,
+    "target_rank": 6,
+    "blind_rank": 14
+   },
+   {
+    "column": "tserum_loss_late_gain",
+    "feature": "TruthSerum_CELoss_LateGain",
+    "manipulation": "M15",
+    "signal": "S5",
+    "reduction": "R6",
+    "target": 0.1307,
+    "blind": 0.0057,
+    "target_rank": 7,
+    "blind_rank": 266
+   },
+   {
+    "column": "tserum_kl_divergence_early",
+    "feature": "TruthSerum_KLD_Early",
+    "manipulation": "M15",
+    "signal": "S12",
+    "reduction": "R5",
+    "target": 0.1271,
+    "blind": 0.0136,
+    "target_rank": 8,
+    "blind_rank": 134
+   },
+   {
+    "column": "temp_kl_divergence_mean",
+    "feature": "Temperature_KLD_Mean",
+    "manipulation": "M20",
+    "signal": "S12",
+    "reduction": "R7",
+    "target": 0.1008,
+    "blind": 0.0097,
+    "target_rank": 9,
+    "blind_rank": 180
+   },
+   {
+    "column": "splitsize_wasserstein_gain",
+    "feature": "SplitFraction_Wasserstein_Gain",
+    "manipulation": "M1",
+    "signal": "S14",
+    "reduction": "R4",
+    "target": 0.0864,
+    "blind": 0.0017,
+    "target_rank": 10,
+    "blind_rank": 424
+   }
+  ],
+  "blind_top": [
+   {
+    "column": "col_prediction_margin_early",
+    "feature": "FeatureSample_Margin_Early",
+    "manipulation": "M6",
+    "signal": "S3",
+    "reduction": "R5",
+    "target": 0.0321,
+    "blind": 0.2449,
+    "target_rank": 57,
+    "blind_rank": 1
+   },
+   {
+    "column": "qleak_kl_divergence_early",
+    "feature": "QueryLeak_KLD_Early",
+    "manipulation": "M16",
+    "signal": "S12",
+    "reduction": "R5",
+    "target": 0.0391,
+    "blind": 0.1583,
+    "target_rank": 45,
+    "blind_rank": 2
+   },
+   {
+    "column": "splitsize_kl_divergence_slope",
+    "feature": "SplitFraction_KLD_Slope",
+    "manipulation": "M1",
+    "signal": "S12",
+    "reduction": "R2",
+    "target": 0.063,
+    "blind": 0.1515,
+    "target_rank": 19,
+    "blind_rank": 3
+   },
+   {
+    "column": "rowdup_accuracy_early",
+    "feature": "RowDuplication_Accuracy_Early",
+    "manipulation": "M14",
+    "signal": "S4",
+    "reduction": "R5",
+    "target": 0.0051,
+    "blind": 0.1381,
+    "target_rank": 292,
+    "blind_rank": 4
+   },
+   {
+    "column": "qleak_loss_late_gain",
+    "feature": "QueryLeak_CELoss_LateGain",
+    "manipulation": "M16",
+    "signal": "S5",
+    "reduction": "R6",
+    "target": 0.0064,
+    "blind": 0.1244,
+    "target_rank": 254,
+    "blind_rank": 5
+   },
+   {
+    "column": "bwash_max_confidence_early",
+    "feature": "Brainwash_MaxConfidence_Early",
+    "manipulation": "M17",
+    "signal": "S2",
+    "reduction": "R5",
+    "target": 0.0185,
+    "blind": 0.1234,
+    "target_rank": 106,
+    "blind_rank": 6
+   },
+   {
+    "column": "qleak_wasserstein_early",
+    "feature": "QueryLeak_Wasserstein_Early",
+    "manipulation": "M16",
+    "signal": "S14",
+    "reduction": "R5",
+    "target": 0.0049,
+    "blind": 0.1169,
+    "target_rank": 306,
+    "blind_rank": 7
+   },
+   {
+    "column": "ctx_accuracy_late_gain",
+    "feature": "RowSampling_Accuracy_LateGain",
+    "manipulation": "M4",
+    "signal": "S4",
+    "reduction": "R6",
+    "target": 0.0287,
+    "blind": 0.1152,
+    "target_rank": 63,
+    "blind_rank": 8
+   },
+   {
+    "column": "bwash_wasserstein_late_gain",
+    "feature": "Brainwash_Wasserstein_LateGain",
+    "manipulation": "M17",
+    "signal": "S14",
+    "reduction": "R6",
+    "target": 0.0516,
+    "blind": 0.1115,
+    "target_rank": 28,
+    "blind_rank": 9
+   },
+   {
+    "column": "ctx_accuracy_early",
+    "feature": "RowSampling_Accuracy_Early",
+    "manipulation": "M4",
+    "signal": "S4",
+    "reduction": "R5",
+    "target": 0.0142,
+    "blind": 0.1097,
+    "target_rank": 133,
+    "blind_rank": 10
+   }
+  ],
+  "overlap": {
+   "10": 0,
+   "32": 7
+  },
+  "spearman": 0.3569,
+  "n_blind_zero_in_target_top": 0,
+  "importance": {
+   "base_accuracy": [
+    0.0,
+    0.008542
+   ],
+   "base_chi_squared": [
+    0.0,
+    0.009184
+   ],
+   "base_correct_confidence": [
+    0.0,
+    0.0
+   ],
+   "base_entropy": [
+    0.001907,
+    0.0
+   ],
+   "base_kl_divergence": [
+    0.001898,
+    0.00329
+   ],
+   "base_loss": [
+    0.0,
+    0.0
+   ],
+   "base_max_confidence": [
+    0.003498,
+    0.0
+   ],
+   "base_prediction_margin": [
+    0.002182,
+    0.0
+   ],
+   "base_wasserstein": [
+    0.0,
+    0.004944
+   ],
+   "bwash_accuracy_auc": [
+    0.001728,
+    0.0
+   ],
+   "bwash_accuracy_early": [
+    0.042319,
+    0.037139
+   ],
+   "bwash_accuracy_gain": [
+    0.009996,
+    0.012827
+   ],
+   "bwash_accuracy_late_gain": [
+    0.023642,
+    0.005174
+   ],
+   "bwash_accuracy_slope": [
+    0.011408,
+    0.014769
+   ],
+   "bwash_chi_squared_auc": [
+    0.007948,
+    0.001901
+   ],
+   "bwash_chi_squared_early": [
+    0.002756,
+    0.004177
+   ],
+   "bwash_chi_squared_gain": [
+    0.005393,
+    0.002025
+   ],
+   "bwash_chi_squared_late_gain": [
+    0.004872,
+    0.011181
+   ],
+   "bwash_chi_squared_slope": [
+    0.004297,
+    0.007563
+   ],
+   "bwash_correct_confidence_auc": [
+    0.001648,
+    0.0
+   ],
+   "bwash_correct_confidence_early": [
+    0.00259,
+    0.071959
+   ],
+   "bwash_correct_confidence_gain": [
+    0.0,
+    0.001877
+   ],
+   "bwash_correct_confidence_late_gain": [
+    0.014064,
+    0.001287
+   ],
+   "bwash_correct_confidence_slope": [
+    0.0,
+    0.0
+   ],
+   "bwash_entropy_auc": [
+    0.040949,
+    0.004591
+   ],
+   "bwash_entropy_early": [
+    0.013201,
+    0.0
+   ],
+   "bwash_entropy_gain": [
+    0.003541,
+    0.003916
+   ],
+   "bwash_entropy_late_gain": [
+    0.001127,
+    0.0
+   ],
+   "bwash_entropy_slope": [
+    0.001604,
+    0.00115
+   ],
+   "bwash_kl2clean_auc": [
+    0.002715,
+    0.001057
+   ],
+   "bwash_kl2clean_early": [
+    0.030568,
+    0.020788
+   ],
+   "bwash_kl2clean_gain": [
+    0.001889,
+    0.0
+   ],
+   "bwash_kl2clean_late_gain": [
+    0.008426,
+    0.001254
+   ],
+   "bwash_kl2clean_slope": [
+    0.007712,
+    0.0
+   ],
+   "bwash_kl_divergence_auc": [
+    0.009563,
+    0.014755
+   ],
+   "bwash_kl_divergence_early": [
+    0.005892,
+    0.003976
+   ],
+   "bwash_kl_divergence_gain": [
+    0.017709,
+    0.042896
+   ],
+   "bwash_kl_divergence_late_gain": [
+    0.005041,
+    0.0058
+   ],
+   "bwash_kl_divergence_slope": [
+    0.003548,
+    0.004932
+   ],
+   "bwash_loss_auc": [
+    0.005227,
+    0.002393
+   ],
+   "bwash_loss_early": [
+    0.040775,
+    0.0
+   ],
+   "bwash_loss_gain": [
+    0.026087,
+    0.0
+   ],
+   "bwash_loss_late_gain": [
+    0.045249,
+    0.002917
+   ],
+   "bwash_loss_slope": [
+    0.058199,
+    0.0
+   ],
+   "bwash_max_confidence_auc": [
+    0.003971,
+    0.006107
+   ],
+   "bwash_max_confidence_early": [
+    0.018484,
+    0.123392
+   ],
+   "bwash_max_confidence_gain": [
+    0.007356,
+    0.001673
+   ],
+   "bwash_max_confidence_late_gain": [
+    0.004793,
+    0.0
+   ],
+   "bwash_max_confidence_slope": [
+    0.002281,
+    0.002942
+   ],
+   "bwash_prediction_margin_auc": [
+    0.002847,
+    0.001248
+   ],
+   "bwash_prediction_margin_early": [
+    0.042158,
+    0.010206
+   ],
+   "bwash_prediction_margin_gain": [
+    0.002006,
+    0.003125
+   ],
+   "bwash_prediction_margin_late_gain": [
+    0.008341,
+    0.003739
+   ],
+   "bwash_prediction_margin_slope": [
+    0.0,
+    0.002712
+   ],
+   "bwash_rkl2clean_auc": [
+    0.017923,
+    0.0148
+   ],
+   "bwash_rkl2clean_early": [
+    0.00689,
+    0.015323
+   ],
+   "bwash_rkl2clean_gain": [
+    0.015652,
+    0.00756
+   ],
+   "bwash_rkl2clean_late_gain": [
+    0.012755,
+    0.0
+   ],
+   "bwash_rkl2clean_slope": [
+    0.006061,
+    0.003246
+   ],
+   "bwash_wasserstein_auc": [
+    0.001488,
+    0.0
+   ],
+   "bwash_wasserstein_early": [
+    0.008141,
+    0.012468
+   ],
+   "bwash_wasserstein_gain": [
+    0.00416,
+    0.015828
+   ],
+   "bwash_wasserstein_late_gain": [
+    0.05162,
+    0.111465
+   ],
+   "bwash_wasserstein_slope": [
+    0.00577,
+    0.009986
+   ],
+   "col_accuracy_auc": [
+    0.001655,
+    0.0
+   ],
+   "col_accuracy_early": [
+    0.008764,
+    0.032015
+   ],
+   "col_accuracy_gain": [
+    0.004227,
+    0.0
+   ],
+   "col_accuracy_late_gain": [
+    0.034326,
+    0.010327
+   ],
+   "col_accuracy_slope": [
+    0.0,
+    0.006433
+   ],
+   "col_chi_squared_auc": [
+    0.033448,
+    0.00958
+   ],
+   "col_chi_squared_early": [
+    0.014074,
+    0.00403
+   ],
+   "col_chi_squared_gain": [
+    0.022004,
+    0.00352
+   ],
+   "col_chi_squared_late_gain": [
+    0.00629,
+    0.01308
+   ],
+   "col_chi_squared_slope": [
+    0.020694,
+    0.082479
+   ],
+   "col_correct_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "col_correct_confidence_early": [
+    0.001589,
+    0.016362
+   ],
+   "col_correct_confidence_gain": [
+    0.0,
+    0.0
+   ],
+   "col_correct_confidence_late_gain": [
+    0.00979,
+    0.00304
+   ],
+   "col_correct_confidence_slope": [
+    0.0,
+    0.005701
+   ],
+   "col_entropy_auc": [
+    0.0,
+    0.001743
+   ],
+   "col_entropy_early": [
+    0.013117,
+    0.00995
+   ],
+   "col_entropy_gain": [
+    0.001292,
+    0.0
+   ],
+   "col_entropy_late_gain": [
+    0.00222,
+    0.00487
+   ],
+   "col_entropy_slope": [
+    0.0,
+    0.011048
+   ],
+   "col_kl2clean_auc": [
+    0.0,
+    0.00179
+   ],
+   "col_kl2clean_early": [
+    0.013006,
+    0.035697
+   ],
+   "col_kl2clean_gain": [
+    0.004901,
+    0.0
+   ],
+   "col_kl2clean_late_gain": [
+    0.009826,
+    0.00333
+   ],
+   "col_kl2clean_slope": [
+    0.003496,
+    0.0
+   ],
+   "col_kl_divergence_auc": [
+    0.150424,
+    0.074733
+   ],
+   "col_kl_divergence_early": [
+    0.012617,
+    0.088131
+   ],
+   "col_kl_divergence_gain": [
+    0.039773,
+    0.014136
+   ],
+   "col_kl_divergence_late_gain": [
+    0.049236,
+    0.057036
+   ],
+   "col_kl_divergence_slope": [
+    0.142732,
+    0.088498
+   ],
+   "col_loss_auc": [
+    0.003951,
+    0.0
+   ],
+   "col_loss_early": [
+    0.002852,
+    0.001881
+   ],
+   "col_loss_gain": [
+    0.0,
+    0.0
+   ],
+   "col_loss_late_gain": [
+    0.001,
+    0.012247
+   ],
+   "col_loss_slope": [
+    0.0,
+    0.01395
+   ],
+   "col_max_confidence_auc": [
+    0.0,
+    0.001503
+   ],
+   "col_max_confidence_early": [
+    0.002692,
+    0.029499
+   ],
+   "col_max_confidence_gain": [
+    0.0,
+    0.0
+   ],
+   "col_max_confidence_late_gain": [
+    0.003983,
+    0.003305
+   ],
+   "col_max_confidence_slope": [
+    0.001969,
+    0.003702
+   ],
+   "col_prediction_margin_auc": [
+    0.004169,
+    0.002511
+   ],
+   "col_prediction_margin_early": [
+    0.032051,
+    0.244881
+   ],
+   "col_prediction_margin_gain": [
+    0.013642,
+    0.014393
+   ],
+   "col_prediction_margin_late_gain": [
+    0.006498,
+    0.00233
+   ],
+   "col_prediction_margin_slope": [
+    0.0,
+    0.000889
+   ],
+   "col_rkl2clean_auc": [
+    0.0,
+    0.0
+   ],
+   "col_rkl2clean_early": [
+    0.011887,
+    0.018691
+   ],
+   "col_rkl2clean_gain": [
+    0.001969,
+    0.003498
+   ],
+   "col_rkl2clean_late_gain": [
+    0.023653,
+    0.0
+   ],
+   "col_rkl2clean_slope": [
+    0.00701,
+    0.007588
+   ],
+   "col_wasserstein_auc": [
+    0.010782,
+    0.007816
+   ],
+   "col_wasserstein_early": [
+    0.002781,
+    0.017601
+   ],
+   "col_wasserstein_gain": [
+    0.005009,
+    0.014367
+   ],
+   "col_wasserstein_late_gain": [
+    0.004924,
+    0.024026
+   ],
+   "col_wasserstein_slope": [
+    0.052142,
+    0.052972
+   ],
+   "ctx_accuracy_auc": [
+    0.003086,
+    0.0
+   ],
+   "ctx_accuracy_early": [
+    0.014195,
+    0.109731
+   ],
+   "ctx_accuracy_gain": [
+    0.03159,
+    0.043173
+   ],
+   "ctx_accuracy_late_gain": [
+    0.028727,
+    0.115179
+   ],
+   "ctx_accuracy_slope": [
+    0.023628,
+    0.020753
+   ],
+   "ctx_chi_squared_auc": [
+    0.003826,
+    0.008087
+   ],
+   "ctx_chi_squared_early": [
+    0.018995,
+    0.063397
+   ],
+   "ctx_chi_squared_gain": [
+    0.008316,
+    0.046033
+   ],
+   "ctx_chi_squared_late_gain": [
+    0.013012,
+    0.012007
+   ],
+   "ctx_chi_squared_slope": [
+    0.011337,
+    0.062535
+   ],
+   "ctx_correct_confidence_auc": [
+    0.0,
+    0.002984
+   ],
+   "ctx_correct_confidence_early": [
+    0.0,
+    0.085048
+   ],
+   "ctx_correct_confidence_gain": [
+    0.0,
+    0.01177
+   ],
+   "ctx_correct_confidence_late_gain": [
+    0.007386,
+    0.008918
+   ],
+   "ctx_correct_confidence_slope": [
+    0.0022,
+    0.020737
+   ],
+   "ctx_entropy_auc": [
+    0.0,
+    0.004518
+   ],
+   "ctx_entropy_early": [
+    0.004056,
+    0.016729
+   ],
+   "ctx_entropy_gain": [
+    0.003542,
+    0.008604
+   ],
+   "ctx_entropy_late_gain": [
+    0.002878,
+    0.014984
+   ],
+   "ctx_entropy_slope": [
+    0.063058,
+    0.005577
+   ],
+   "ctx_kl2clean_auc": [
+    0.021265,
+    0.016782
+   ],
+   "ctx_kl2clean_early": [
+    0.021891,
+    0.009704
+   ],
+   "ctx_kl2clean_gain": [
+    0.011876,
+    0.057586
+   ],
+   "ctx_kl2clean_late_gain": [
+    0.220265,
+    0.055921
+   ],
+   "ctx_kl2clean_slope": [
+    0.027043,
+    0.037717
+   ],
+   "ctx_kl_divergence_auc": [
+    0.080621,
+    0.009612
+   ],
+   "ctx_kl_divergence_early": [
+    0.008591,
+    0.00389
+   ],
+   "ctx_kl_divergence_gain": [
+    0.001596,
+    0.006445
+   ],
+   "ctx_kl_divergence_late_gain": [
+    0.028227,
+    0.027357
+   ],
+   "ctx_kl_divergence_slope": [
+    0.009666,
+    0.016291
+   ],
+   "ctx_loss_auc": [
+    0.006522,
+    0.004364
+   ],
+   "ctx_loss_early": [
+    0.03178,
+    0.007891
+   ],
+   "ctx_loss_gain": [
+    0.022278,
+    0.003934
+   ],
+   "ctx_loss_late_gain": [
+    0.019031,
+    0.017431
+   ],
+   "ctx_loss_slope": [
+    0.017596,
+    0.002499
+   ],
+   "ctx_max_confidence_auc": [
+    0.0,
+    0.004926
+   ],
+   "ctx_max_confidence_early": [
+    0.0,
+    0.069844
+   ],
+   "ctx_max_confidence_gain": [
+    0.0,
+    0.022796
+   ],
+   "ctx_max_confidence_late_gain": [
+    0.011752,
+    0.045202
+   ],
+   "ctx_max_confidence_slope": [
+    0.018917,
+    0.013273
+   ],
+   "ctx_prediction_margin_auc": [
+    0.0,
+    0.007382
+   ],
+   "ctx_prediction_margin_early": [
+    0.01791,
+    0.037461
+   ],
+   "ctx_prediction_margin_gain": [
+    0.001397,
+    0.051903
+   ],
+   "ctx_prediction_margin_late_gain": [
+    0.015033,
+    0.015783
+   ],
+   "ctx_prediction_margin_slope": [
+    0.009219,
+    0.038353
+   ],
+   "ctx_rkl2clean_auc": [
+    0.008775,
+    0.002403
+   ],
+   "ctx_rkl2clean_early": [
+    0.023863,
+    0.01223
+   ],
+   "ctx_rkl2clean_gain": [
+    0.006882,
+    0.001576
+   ],
+   "ctx_rkl2clean_late_gain": [
+    0.040577,
+    0.012253
+   ],
+   "ctx_rkl2clean_slope": [
+    0.03322,
+    0.008376
+   ],
+   "ctx_wasserstein_auc": [
+    0.00144,
+    0.0
+   ],
+   "ctx_wasserstein_early": [
+    0.007587,
+    0.016313
+   ],
+   "ctx_wasserstein_gain": [
+    0.024249,
+    0.016256
+   ],
+   "ctx_wasserstein_late_gain": [
+    0.005298,
+    0.054473
+   ],
+   "ctx_wasserstein_slope": [
+    0.007,
+    0.011838
+   ],
+   "ctxeqq_accuracy": [
+    0.003269,
+    0.001661
+   ],
+   "ctxeqq_chi_squared": [
+    0.0,
+    0.0
+   ],
+   "ctxeqq_correct_confidence": [
+    0.024526,
+    0.003951
+   ],
+   "ctxeqq_entropy": [
+    0.0,
+    0.0
+   ],
+   "ctxeqq_kl_divergence": [
+    0.020562,
+    0.0
+   ],
+   "ctxeqq_loss": [
+    0.024832,
+    0.0
+   ],
+   "ctxeqq_max_confidence": [
+    0.003933,
+    0.0
+   ],
+   "ctxeqq_prediction_margin": [
+    0.04143,
+    0.00246
+   ],
+   "ctxeqq_wasserstein": [
+    0.0,
+    0.0
+   ],
+   "ftx_accuracy_mean": [
+    0.0,
+    0.0
+   ],
+   "ftx_accuracy_range": [
+    0.001996,
+    0.011482
+   ],
+   "ftx_accuracy_std": [
+    0.0,
+    0.017207
+   ],
+   "ftx_chi_squared_mean": [
+    0.0,
+    0.012857
+   ],
+   "ftx_chi_squared_range": [
+    0.012685,
+    0.006035
+   ],
+   "ftx_chi_squared_std": [
+    0.002444,
+    0.001657
+   ],
+   "ftx_correct_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "ftx_correct_confidence_range": [
+    0.011046,
+    0.006229
+   ],
+   "ftx_correct_confidence_std": [
+    0.004567,
+    0.006628
+   ],
+   "ftx_entropy_mean": [
+    0.0,
+    0.0
+   ],
+   "ftx_entropy_range": [
+    0.006251,
+    0.005532
+   ],
+   "ftx_entropy_std": [
+    0.003096,
+    0.002347
+   ],
+   "ftx_kl_divergence_mean": [
+    0.0176,
+    0.002734
+   ],
+   "ftx_kl_divergence_range": [
+    0.003857,
+    0.0
+   ],
+   "ftx_kl_divergence_std": [
+    0.008824,
+    0.0
+   ],
+   "ftx_loss_mean": [
+    0.0,
+    0.0
+   ],
+   "ftx_loss_range": [
+    0.004012,
+    0.004281
+   ],
+   "ftx_loss_std": [
+    0.010312,
+    0.0
+   ],
+   "ftx_max_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "ftx_max_confidence_range": [
+    0.011555,
+    0.001782
+   ],
+   "ftx_max_confidence_std": [
+    0.004963,
+    0.0
+   ],
+   "ftx_prediction_margin_mean": [
+    0.007884,
+    0.0
+   ],
+   "ftx_prediction_margin_range": [
+    0.013858,
+    0.0
+   ],
+   "ftx_prediction_margin_std": [
+    0.006683,
+    0.0
+   ],
+   "ftx_wasserstein_mean": [
+    0.004615,
+    0.0
+   ],
+   "ftx_wasserstein_range": [
+    0.013957,
+    0.047956
+   ],
+   "ftx_wasserstein_std": [
+    0.007067,
+    0.078662
+   ],
+   "lperm_accuracy_mean": [
+    0.007352,
+    0.006776
+   ],
+   "lperm_accuracy_range": [
+    0.009564,
+    0.005041
+   ],
+   "lperm_accuracy_std": [
+    0.0,
+    0.007789
+   ],
+   "lperm_chi_squared_mean": [
+    0.007993,
+    0.010383
+   ],
+   "lperm_chi_squared_range": [
+    0.0,
+    0.003457
+   ],
+   "lperm_chi_squared_std": [
+    0.0,
+    0.003968
+   ],
+   "lperm_correct_confidence_mean": [
+    0.006618,
+    0.010554
+   ],
+   "lperm_correct_confidence_range": [
+    0.00261,
+    0.003076
+   ],
+   "lperm_correct_confidence_std": [
+    0.0,
+    0.0
+   ],
+   "lperm_entropy_mean": [
+    0.0,
+    0.0
+   ],
+   "lperm_entropy_range": [
+    0.027931,
+    0.0
+   ],
+   "lperm_entropy_std": [
+    0.013672,
+    0.002113
+   ],
+   "lperm_kl_divergence_mean": [
+    0.0,
+    0.008653
+   ],
+   "lperm_kl_divergence_range": [
+    0.001559,
+    0.005284
+   ],
+   "lperm_kl_divergence_std": [
+    0.0,
+    0.004643
+   ],
+   "lperm_loss_mean": [
+    0.001295,
+    0.000689
+   ],
+   "lperm_loss_range": [
+    0.0,
+    0.000797
+   ],
+   "lperm_loss_std": [
+    0.0,
+    0.0
+   ],
+   "lperm_max_confidence_mean": [
+    0.004229,
+    0.0
+   ],
+   "lperm_max_confidence_range": [
+    0.04049,
+    0.003377
+   ],
+   "lperm_max_confidence_std": [
+    0.012729,
+    0.0
+   ],
+   "lperm_prediction_margin_mean": [
+    0.0,
+    0.0
+   ],
+   "lperm_prediction_margin_range": [
+    0.013996,
+    0.0
+   ],
+   "lperm_prediction_margin_std": [
+    0.058884,
+    0.001716
+   ],
+   "lperm_wasserstein_mean": [
+    0.045007,
+    0.028511
+   ],
+   "lperm_wasserstein_range": [
+    0.002257,
+    0.003783
+   ],
+   "lperm_wasserstein_std": [
+    0.038279,
+    0.019938
+   ],
+   "mislbl_random_accuracy_auc": [
+    0.004587,
+    0.002164
+   ],
+   "mislbl_random_accuracy_early": [
+    0.014041,
+    0.01914
+   ],
+   "mislbl_random_accuracy_gain": [
+    0.015964,
+    0.015903
+   ],
+   "mislbl_random_accuracy_late_gain": [
+    0.011525,
+    0.022108
+   ],
+   "mislbl_random_accuracy_slope": [
+    0.003448,
+    0.0
+   ],
+   "mislbl_random_chi_squared_auc": [
+    0.006169,
+    0.005955
+   ],
+   "mislbl_random_chi_squared_early": [
+    0.010782,
+    0.009474
+   ],
+   "mislbl_random_chi_squared_gain": [
+    0.020827,
+    0.016356
+   ],
+   "mislbl_random_chi_squared_late_gain": [
+    0.008685,
+    0.028333
+   ],
+   "mislbl_random_chi_squared_slope": [
+    0.007245,
+    0.001231
+   ],
+   "mislbl_random_correct_confidence_auc": [
+    0.00138,
+    0.001714
+   ],
+   "mislbl_random_correct_confidence_early": [
+    0.001313,
+    0.055165
+   ],
+   "mislbl_random_correct_confidence_gain": [
+    0.001196,
+    0.0
+   ],
+   "mislbl_random_correct_confidence_late_gain": [
+    0.00541,
+    0.002215
+   ],
+   "mislbl_random_correct_confidence_slope": [
+    0.0,
+    0.0
+   ],
+   "mislbl_random_entropy_auc": [
+    0.001684,
+    0.0
+   ],
+   "mislbl_random_entropy_early": [
+    0.002053,
+    0.0
+   ],
+   "mislbl_random_entropy_gain": [
+    0.002244,
+    0.004138
+   ],
+   "mislbl_random_entropy_late_gain": [
+    0.014268,
+    0.008497
+   ],
+   "mislbl_random_entropy_slope": [
+    0.003578,
+    0.011798
+   ],
+   "mislbl_random_kl2clean_auc": [
+    0.004096,
+    0.001221
+   ],
+   "mislbl_random_kl2clean_early": [
+    0.004298,
+    0.024417
+   ],
+   "mislbl_random_kl2clean_gain": [
+    0.003992,
+    0.0
+   ],
+   "mislbl_random_kl2clean_late_gain": [
+    0.0,
+    0.0
+   ],
+   "mislbl_random_kl2clean_slope": [
+    0.001783,
+    0.0
+   ],
+   "mislbl_random_kl_divergence_auc": [
+    0.009757,
+    0.0
+   ],
+   "mislbl_random_kl_divergence_early": [
+    0.004518,
+    0.004303
+   ],
+   "mislbl_random_kl_divergence_gain": [
+    0.0,
+    0.01478
+   ],
+   "mislbl_random_kl_divergence_late_gain": [
+    0.002156,
+    0.001703
+   ],
+   "mislbl_random_kl_divergence_slope": [
+    0.003113,
+    0.008039
+   ],
+   "mislbl_random_loss_auc": [
+    0.0,
+    0.001311
+   ],
+   "mislbl_random_loss_early": [
+    0.002573,
+    0.0
+   ],
+   "mislbl_random_loss_gain": [
+    0.0,
+    0.00244
+   ],
+   "mislbl_random_loss_late_gain": [
+    0.0,
+    0.001974
+   ],
+   "mislbl_random_loss_slope": [
+    0.0,
+    0.0
+   ],
+   "mislbl_random_max_confidence_auc": [
+    0.0,
+    0.001699
+   ],
+   "mislbl_random_max_confidence_early": [
+    0.0,
+    0.032671
+   ],
+   "mislbl_random_max_confidence_gain": [
+    0.005219,
+    0.0
+   ],
+   "mislbl_random_max_confidence_late_gain": [
+    0.001327,
+    0.0
+   ],
+   "mislbl_random_max_confidence_slope": [
+    0.0,
+    0.0
+   ],
+   "mislbl_random_prediction_margin_auc": [
+    0.002857,
+    0.0
+   ],
+   "mislbl_random_prediction_margin_early": [
+    0.001677,
+    0.003954
+   ],
+   "mislbl_random_prediction_margin_gain": [
+    0.00167,
+    0.0023
+   ],
+   "mislbl_random_prediction_margin_late_gain": [
+    0.0,
+    0.001742
+   ],
+   "mislbl_random_prediction_margin_slope": [
+    0.0,
+    0.0
+   ],
+   "mislbl_random_rkl2clean_auc": [
+    0.003938,
+    0.009039
+   ],
+   "mislbl_random_rkl2clean_early": [
+    0.001886,
+    0.018438
+   ],
+   "mislbl_random_rkl2clean_gain": [
+    0.0,
+    0.002136
+   ],
+   "mislbl_random_rkl2clean_late_gain": [
+    0.002285,
+    0.001637
+   ],
+   "mislbl_random_rkl2clean_slope": [
+    0.0,
+    0.002885
+   ],
+   "mislbl_random_wasserstein_auc": [
+    0.009211,
+    0.008751
+   ],
+   "mislbl_random_wasserstein_early": [
+    0.007681,
+    0.007849
+   ],
+   "mislbl_random_wasserstein_gain": [
+    0.003666,
+    0.02073
+   ],
+   "mislbl_random_wasserstein_late_gain": [
+    0.003819,
+    0.042477
+   ],
+   "mislbl_random_wasserstein_slope": [
+    0.005681,
+    0.007862
+   ],
+   "nnsplit_accuracy": [
+    0.0,
+    0.0
+   ],
+   "nnsplit_chi_squared": [
+    0.00198,
+    0.0
+   ],
+   "nnsplit_correct_confidence": [
+    0.006309,
+    0.0
+   ],
+   "nnsplit_entropy": [
+    0.0,
+    0.0
+   ],
+   "nnsplit_kl_divergence": [
+    0.00615,
+    0.078218
+   ],
+   "nnsplit_loss": [
+    0.0,
+    0.0
+   ],
+   "nnsplit_max_confidence": [
+    0.013711,
+    0.001894
+   ],
+   "nnsplit_prediction_margin": [
+    0.002632,
+    0.0
+   ],
+   "nnsplit_wasserstein": [
+    0.0,
+    0.00096
+   ],
+   "noise_accuracy_auc": [
+    0.005002,
+    0.000959
+   ],
+   "noise_accuracy_early": [
+    0.0,
+    0.001586
+   ],
+   "noise_accuracy_gain": [
+    0.003781,
+    0.004502
+   ],
+   "noise_accuracy_late_gain": [
+    0.022652,
+    0.002383
+   ],
+   "noise_accuracy_slope": [
+    0.013865,
+    0.003039
+   ],
+   "noise_chi_squared_auc": [
+    0.00407,
+    0.000805
+   ],
+   "noise_chi_squared_early": [
+    0.004968,
+    0.001696
+   ],
+   "noise_chi_squared_gain": [
+    0.016343,
+    0.010606
+   ],
+   "noise_chi_squared_late_gain": [
+    0.007334,
+    0.004948
+   ],
+   "noise_chi_squared_slope": [
+    0.019322,
+    0.006849
+   ],
+   "noise_correct_confidence_auc": [
+    0.001363,
+    0.0
+   ],
+   "noise_correct_confidence_early": [
+    0.003119,
+    0.007639
+   ],
+   "noise_correct_confidence_gain": [
+    0.014378,
+    0.008962
+   ],
+   "noise_correct_confidence_late_gain": [
+    0.0,
+    0.007751
+   ],
+   "noise_correct_confidence_slope": [
+    0.016049,
+    0.001596
+   ],
+   "noise_entropy_auc": [
+    0.0,
+    0.0
+   ],
+   "noise_entropy_early": [
+    0.004388,
+    0.004619
+   ],
+   "noise_entropy_gain": [
+    0.001915,
+    0.003616
+   ],
+   "noise_entropy_late_gain": [
+    0.001171,
+    0.045822
+   ],
+   "noise_entropy_slope": [
+    0.00434,
+    0.00487
+   ],
+   "noise_kl2clean_auc": [
+    0.0,
+    0.0
+   ],
+   "noise_kl2clean_early": [
+    0.075341,
+    0.005299
+   ],
+   "noise_kl2clean_gain": [
+    0.0,
+    0.002225
+   ],
+   "noise_kl2clean_late_gain": [
+    0.005735,
+    0.001518
+   ],
+   "noise_kl2clean_slope": [
+    0.004606,
+    0.002433
+   ],
+   "noise_kl_divergence_auc": [
+    0.020125,
+    0.013304
+   ],
+   "noise_kl_divergence_early": [
+    0.171046,
+    0.007447
+   ],
+   "noise_kl_divergence_gain": [
+    0.005132,
+    0.008727
+   ],
+   "noise_kl_divergence_late_gain": [
+    0.004743,
+    0.007228
+   ],
+   "noise_kl_divergence_slope": [
+    0.004525,
+    0.006475
+   ],
+   "noise_loss_auc": [
+    0.004303,
+    0.0
+   ],
+   "noise_loss_early": [
+    0.019681,
+    0.008438
+   ],
+   "noise_loss_gain": [
+    0.005679,
+    0.00537
+   ],
+   "noise_loss_late_gain": [
+    0.0598,
+    0.020633
+   ],
+   "noise_loss_slope": [
+    0.021988,
+    0.001996
+   ],
+   "noise_max_confidence_auc": [
+    0.002709,
+    0.00454
+   ],
+   "noise_max_confidence_early": [
+    0.003871,
+    0.001521
+   ],
+   "noise_max_confidence_gain": [
+    0.006273,
+    0.006029
+   ],
+   "noise_max_confidence_late_gain": [
+    0.0,
+    0.005789
+   ],
+   "noise_max_confidence_slope": [
+    0.010374,
+    0.0
+   ],
+   "noise_prediction_margin_auc": [
+    0.003344,
+    0.004315
+   ],
+   "noise_prediction_margin_early": [
+    0.012685,
+    0.001985
+   ],
+   "noise_prediction_margin_gain": [
+    0.007733,
+    0.015496
+   ],
+   "noise_prediction_margin_late_gain": [
+    0.00849,
+    0.011797
+   ],
+   "noise_prediction_margin_slope": [
+    0.037387,
+    0.031399
+   ],
+   "noise_rkl2clean_auc": [
+    0.002342,
+    0.003117
+   ],
+   "noise_rkl2clean_early": [
+    0.023376,
+    0.015778
+   ],
+   "noise_rkl2clean_gain": [
+    0.004452,
+    0.00169
+   ],
+   "noise_rkl2clean_late_gain": [
+    0.042045,
+    0.000738
+   ],
+   "noise_rkl2clean_slope": [
+    0.013249,
+    0.002241
+   ],
+   "noise_wasserstein_auc": [
+    0.01256,
+    0.005425
+   ],
+   "noise_wasserstein_early": [
+    0.011247,
+    0.002279
+   ],
+   "noise_wasserstein_gain": [
+    0.005012,
+    0.0
+   ],
+   "noise_wasserstein_late_gain": [
+    0.004629,
+    0.005559
+   ],
+   "noise_wasserstein_slope": [
+    0.002449,
+    0.012123
+   ],
+   "qleak_accuracy_auc": [
+    0.0,
+    0.000781
+   ],
+   "qleak_accuracy_early": [
+    0.004214,
+    0.019643
+   ],
+   "qleak_accuracy_gain": [
+    0.0,
+    0.053894
+   ],
+   "qleak_accuracy_late_gain": [
+    0.001659,
+    0.025928
+   ],
+   "qleak_accuracy_slope": [
+    0.0,
+    0.008044
+   ],
+   "qleak_chi_squared_auc": [
+    0.0,
+    0.003071
+   ],
+   "qleak_chi_squared_early": [
+    0.034437,
+    0.037226
+   ],
+   "qleak_chi_squared_gain": [
+    0.002441,
+    0.009659
+   ],
+   "qleak_chi_squared_late_gain": [
+    0.0,
+    0.00143
+   ],
+   "qleak_chi_squared_slope": [
+    0.001391,
+    0.0
+   ],
+   "qleak_correct_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "qleak_correct_confidence_early": [
+    0.0,
+    0.0
+   ],
+   "qleak_correct_confidence_gain": [
+    0.0,
+    0.0
+   ],
+   "qleak_correct_confidence_late_gain": [
+    0.0,
+    0.001554
+   ],
+   "qleak_correct_confidence_slope": [
+    0.0,
+    0.004787
+   ],
+   "qleak_entropy_auc": [
+    0.001166,
+    0.0
+   ],
+   "qleak_entropy_early": [
+    0.007027,
+    0.015261
+   ],
+   "qleak_entropy_gain": [
+    0.0,
+    0.001421
+   ],
+   "qleak_entropy_late_gain": [
+    0.004556,
+    0.00491
+   ],
+   "qleak_entropy_slope": [
+    0.0,
+    0.0
+   ],
+   "qleak_kl2clean_auc": [
+    0.001228,
+    0.011363
+   ],
+   "qleak_kl2clean_early": [
+    0.004869,
+    0.007539
+   ],
+   "qleak_kl2clean_gain": [
+    0.0,
+    0.005327
+   ],
+   "qleak_kl2clean_late_gain": [
+    0.006036,
+    0.004501
+   ],
+   "qleak_kl2clean_slope": [
+    0.0,
+    0.026666
+   ],
+   "qleak_kl_divergence_auc": [
+    0.004396,
+    0.004544
+   ],
+   "qleak_kl_divergence_early": [
+    0.039079,
+    0.158301
+   ],
+   "qleak_kl_divergence_gain": [
+    0.007416,
+    0.011341
+   ],
+   "qleak_kl_divergence_late_gain": [
+    0.052872,
+    0.025911
+   ],
+   "qleak_kl_divergence_slope": [
+    0.009019,
+    0.01713
+   ],
+   "qleak_loss_auc": [
+    0.0,
+    0.0
+   ],
+   "qleak_loss_early": [
+    0.037575,
+    0.075804
+   ],
+   "qleak_loss_gain": [
+    0.0,
+    0.032902
+   ],
+   "qleak_loss_late_gain": [
+    0.006441,
+    0.124402
+   ],
+   "qleak_loss_slope": [
+    0.0,
+    0.015286
+   ],
+   "qleak_max_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "qleak_max_confidence_early": [
+    0.003895,
+    0.02223
+   ],
+   "qleak_max_confidence_gain": [
+    0.0,
+    0.0
+   ],
+   "qleak_max_confidence_late_gain": [
+    0.0,
+    0.007355
+   ],
+   "qleak_max_confidence_slope": [
+    0.0,
+    0.001964
+   ],
+   "qleak_prediction_margin_auc": [
+    0.003769,
+    0.0
+   ],
+   "qleak_prediction_margin_early": [
+    0.003436,
+    0.024532
+   ],
+   "qleak_prediction_margin_gain": [
+    0.0,
+    0.011616
+   ],
+   "qleak_prediction_margin_late_gain": [
+    0.0,
+    0.001822
+   ],
+   "qleak_prediction_margin_slope": [
+    0.0,
+    0.00878
+   ],
+   "qleak_rkl2clean_auc": [
+    0.00149,
+    0.004387
+   ],
+   "qleak_rkl2clean_early": [
+    0.005651,
+    0.038911
+   ],
+   "qleak_rkl2clean_gain": [
+    0.009025,
+    0.017591
+   ],
+   "qleak_rkl2clean_late_gain": [
+    0.005282,
+    0.001658
+   ],
+   "qleak_rkl2clean_slope": [
+    0.005264,
+    0.008067
+   ],
+   "qleak_wasserstein_auc": [
+    0.0,
+    0.00162
+   ],
+   "qleak_wasserstein_early": [
+    0.004897,
+    0.116908
+   ],
+   "qleak_wasserstein_gain": [
+    0.004851,
+    0.0
+   ],
+   "qleak_wasserstein_late_gain": [
+    0.004099,
+    0.00113
+   ],
+   "qleak_wasserstein_slope": [
+    0.002555,
+    0.003036
+   ],
+   "rowdup_accuracy_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_accuracy_early": [
+    0.005115,
+    0.138068
+   ],
+   "rowdup_accuracy_gain": [
+    0.037861,
+    0.022324
+   ],
+   "rowdup_accuracy_late_gain": [
+    0.005341,
+    0.010859
+   ],
+   "rowdup_accuracy_slope": [
+    0.062083,
+    0.029289
+   ],
+   "rowdup_chi_squared_auc": [
+    0.00159,
+    0.002617
+   ],
+   "rowdup_chi_squared_early": [
+    0.15229,
+    0.007744
+   ],
+   "rowdup_chi_squared_gain": [
+    0.003735,
+    0.006833
+   ],
+   "rowdup_chi_squared_late_gain": [
+    0.011037,
+    0.0
+   ],
+   "rowdup_chi_squared_slope": [
+    0.004783,
+    0.002867
+   ],
+   "rowdup_correct_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_correct_confidence_early": [
+    0.002159,
+    0.005125
+   ],
+   "rowdup_correct_confidence_gain": [
+    0.013655,
+    0.006524
+   ],
+   "rowdup_correct_confidence_late_gain": [
+    0.007525,
+    0.005156
+   ],
+   "rowdup_correct_confidence_slope": [
+    0.009037,
+    0.002722
+   ],
+   "rowdup_entropy_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_entropy_early": [
+    0.004245,
+    0.097859
+   ],
+   "rowdup_entropy_gain": [
+    0.0,
+    0.0
+   ],
+   "rowdup_entropy_late_gain": [
+    0.001387,
+    0.002917
+   ],
+   "rowdup_entropy_slope": [
+    0.0,
+    0.003405
+   ],
+   "rowdup_kl2clean_auc": [
+    0.005272,
+    0.0
+   ],
+   "rowdup_kl2clean_early": [
+    0.007141,
+    0.007813
+   ],
+   "rowdup_kl2clean_gain": [
+    0.0,
+    0.002365
+   ],
+   "rowdup_kl2clean_late_gain": [
+    0.002179,
+    0.001358
+   ],
+   "rowdup_kl2clean_slope": [
+    0.0,
+    0.0
+   ],
+   "rowdup_kl_divergence_auc": [
+    0.019809,
+    0.008155
+   ],
+   "rowdup_kl_divergence_early": [
+    0.004092,
+    0.027517
+   ],
+   "rowdup_kl_divergence_gain": [
+    0.032401,
+    0.004833
+   ],
+   "rowdup_kl_divergence_late_gain": [
+    0.031034,
+    0.008307
+   ],
+   "rowdup_kl_divergence_slope": [
+    0.014563,
+    0.001293
+   ],
+   "rowdup_loss_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_loss_early": [
+    0.002041,
+    0.009719
+   ],
+   "rowdup_loss_gain": [
+    0.003517,
+    0.0
+   ],
+   "rowdup_loss_late_gain": [
+    0.005629,
+    0.012642
+   ],
+   "rowdup_loss_slope": [
+    0.001325,
+    0.010419
+   ],
+   "rowdup_max_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_max_confidence_early": [
+    0.003665,
+    0.001346
+   ],
+   "rowdup_max_confidence_gain": [
+    0.027288,
+    0.005795
+   ],
+   "rowdup_max_confidence_late_gain": [
+    0.004068,
+    0.00067
+   ],
+   "rowdup_max_confidence_slope": [
+    0.006439,
+    0.002482
+   ],
+   "rowdup_prediction_margin_auc": [
+    0.0,
+    0.0
+   ],
+   "rowdup_prediction_margin_early": [
+    0.000708,
+    0.00909
+   ],
+   "rowdup_prediction_margin_gain": [
+    0.017876,
+    0.003764
+   ],
+   "rowdup_prediction_margin_late_gain": [
+    0.001623,
+    0.019395
+   ],
+   "rowdup_prediction_margin_slope": [
+    0.035843,
+    0.0
+   ],
+   "rowdup_rkl2clean_auc": [
+    0.001546,
+    0.0
+   ],
+   "rowdup_rkl2clean_early": [
+    0.008683,
+    0.003302
+   ],
+   "rowdup_rkl2clean_gain": [
+    0.0,
+    0.0
+   ],
+   "rowdup_rkl2clean_late_gain": [
+    0.000793,
+    0.008049
+   ],
+   "rowdup_rkl2clean_slope": [
+    0.0,
+    0.0
+   ],
+   "rowdup_wasserstein_auc": [
+    0.005447,
+    0.001529
+   ],
+   "rowdup_wasserstein_early": [
+    0.012463,
+    0.012293
+   ],
+   "rowdup_wasserstein_gain": [
+    0.007134,
+    0.002504
+   ],
+   "rowdup_wasserstein_late_gain": [
+    0.012221,
+    0.000912
+   ],
+   "rowdup_wasserstein_slope": [
+    0.001234,
+    0.006283
+   ],
+   "rowshuf_accuracy_mean": [
+    0.0,
+    0.002501
+   ],
+   "rowshuf_accuracy_range": [
+    0.0,
+    0.001286
+   ],
+   "rowshuf_accuracy_std": [
+    0.001372,
+    0.0
+   ],
+   "rowshuf_chi_squared_mean": [
+    0.014269,
+    0.005166
+   ],
+   "rowshuf_chi_squared_range": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_chi_squared_std": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_correct_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_correct_confidence_range": [
+    0.0,
+    0.008799
+   ],
+   "rowshuf_correct_confidence_std": [
+    0.0,
+    0.005734
+   ],
+   "rowshuf_entropy_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_entropy_range": [
+    0.004364,
+    0.0013
+   ],
+   "rowshuf_entropy_std": [
+    0.003187,
+    0.0
+   ],
+   "rowshuf_kl_divergence_mean": [
+    0.020909,
+    0.0
+   ],
+   "rowshuf_kl_divergence_range": [
+    0.013285,
+    0.00166
+   ],
+   "rowshuf_kl_divergence_std": [
+    0.011716,
+    0.002029
+   ],
+   "rowshuf_loss_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_loss_range": [
+    0.002935,
+    0.009781
+   ],
+   "rowshuf_loss_std": [
+    0.002721,
+    0.007578
+   ],
+   "rowshuf_max_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_max_confidence_range": [
+    0.0,
+    0.002545
+   ],
+   "rowshuf_max_confidence_std": [
+    0.002977,
+    0.005112
+   ],
+   "rowshuf_prediction_margin_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_prediction_margin_range": [
+    0.002919,
+    0.004612
+   ],
+   "rowshuf_prediction_margin_std": [
+    0.003963,
+    0.002536
+   ],
+   "rowshuf_wasserstein_mean": [
+    0.0,
+    0.0
+   ],
+   "rowshuf_wasserstein_range": [
+    0.002343,
+    0.0
+   ],
+   "rowshuf_wasserstein_std": [
+    0.0,
+    0.0
+   ],
+   "splitsize_accuracy_auc": [
+    0.0,
+    0.0
+   ],
+   "splitsize_accuracy_early": [
+    0.082649,
+    0.004484
+   ],
+   "splitsize_accuracy_gain": [
+    0.025203,
+    0.000879
+   ],
+   "splitsize_accuracy_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_accuracy_slope": [
+    0.026399,
+    0.0
+   ],
+   "splitsize_chi_squared_auc": [
+    0.014828,
+    0.0
+   ],
+   "splitsize_chi_squared_early": [
+    0.003233,
+    0.099385
+   ],
+   "splitsize_chi_squared_gain": [
+    0.015023,
+    0.01657
+   ],
+   "splitsize_chi_squared_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_chi_squared_slope": [
+    0.047998,
+    0.014539
+   ],
+   "splitsize_correct_confidence_auc": [
+    0.001234,
+    0.0
+   ],
+   "splitsize_correct_confidence_early": [
+    0.013605,
+    0.001862
+   ],
+   "splitsize_correct_confidence_gain": [
+    0.0,
+    0.03288
+   ],
+   "splitsize_correct_confidence_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_correct_confidence_slope": [
+    0.015805,
+    0.015537
+   ],
+   "splitsize_entropy_auc": [
+    0.0,
+    0.0
+   ],
+   "splitsize_entropy_early": [
+    0.003423,
+    0.007147
+   ],
+   "splitsize_entropy_gain": [
+    0.010895,
+    0.008492
+   ],
+   "splitsize_entropy_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_entropy_slope": [
+    0.001536,
+    0.027599
+   ],
+   "splitsize_kl2clean_auc": [
+    0.0,
+    0.02464
+   ],
+   "splitsize_kl2clean_early": [
+    0.029547,
+    0.006595
+   ],
+   "splitsize_kl2clean_gain": [
+    0.002099,
+    0.045535
+   ],
+   "splitsize_kl2clean_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_kl2clean_slope": [
+    0.005383,
+    0.024716
+   ],
+   "splitsize_kl_divergence_auc": [
+    0.016262,
+    0.106409
+   ],
+   "splitsize_kl_divergence_early": [
+    0.00402,
+    0.0
+   ],
+   "splitsize_kl_divergence_gain": [
+    0.007092,
+    0.014869
+   ],
+   "splitsize_kl_divergence_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_kl_divergence_slope": [
+    0.062972,
+    0.151501
+   ],
+   "splitsize_loss_auc": [
+    0.0,
+    0.0
+   ],
+   "splitsize_loss_early": [
+    0.003643,
+    0.001378
+   ],
+   "splitsize_loss_gain": [
+    0.011037,
+    0.001833
+   ],
+   "splitsize_loss_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_loss_slope": [
+    0.022269,
+    0.011741
+   ],
+   "splitsize_max_confidence_auc": [
+    0.0,
+    0.0
+   ],
+   "splitsize_max_confidence_early": [
+    0.0,
+    0.009013
+   ],
+   "splitsize_max_confidence_gain": [
+    0.001548,
+    0.002915
+   ],
+   "splitsize_max_confidence_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_max_confidence_slope": [
+    0.000981,
+    0.006742
+   ],
+   "splitsize_prediction_margin_auc": [
+    0.0,
+    0.001401
+   ],
+   "splitsize_prediction_margin_early": [
+    0.004258,
+    0.008594
+   ],
+   "splitsize_prediction_margin_gain": [
+    0.001436,
+    0.003513
+   ],
+   "splitsize_prediction_margin_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_prediction_margin_slope": [
+    0.0,
+    0.00229
+   ],
+   "splitsize_rkl2clean_auc": [
+    0.010763,
+    0.022818
+   ],
+   "splitsize_rkl2clean_early": [
+    0.011174,
+    0.005812
+   ],
+   "splitsize_rkl2clean_gain": [
+    0.006972,
+    0.025253
+   ],
+   "splitsize_rkl2clean_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_rkl2clean_slope": [
+    0.002418,
+    0.025357
+   ],
+   "splitsize_wasserstein_auc": [
+    0.003667,
+    0.0
+   ],
+   "splitsize_wasserstein_early": [
+    0.014535,
+    0.010466
+   ],
+   "splitsize_wasserstein_gain": [
+    0.086406,
+    0.001736
+   ],
+   "splitsize_wasserstein_late_gain": [
+    0.0,
+    0.0
+   ],
+   "splitsize_wasserstein_slope": [
+    0.053386,
+    0.017012
+   ],
+   "tabdpt_sim_accuracy_mean": [
+    0.0,
+    0.003497
+   ],
+   "tabdpt_sim_accuracy_range": [
+    0.013057,
+    0.001711
+   ],
+   "tabdpt_sim_accuracy_std": [
+    0.020777,
+    0.00272
+   ],
+   "tabdpt_sim_chi_squared_mean": [
+    0.001063,
+    0.011495
+   ],
+   "tabdpt_sim_chi_squared_range": [
+    0.007664,
+    0.015393
+   ],
+   "tabdpt_sim_chi_squared_std": [
+    0.001389,
+    0.015366
+   ],
+   "tabdpt_sim_correct_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "tabdpt_sim_correct_confidence_range": [
+    0.005682,
+    0.01151
+   ],
+   "tabdpt_sim_correct_confidence_std": [
+    0.001706,
+    0.004205
+   ],
+   "tabdpt_sim_entropy_mean": [
+    0.006831,
+    0.000747
+   ],
+   "tabdpt_sim_entropy_range": [
+    0.001515,
+    0.0
+   ],
+   "tabdpt_sim_entropy_std": [
+    0.002656,
+    0.001888
+   ],
+   "tabdpt_sim_kl_divergence_mean": [
+    0.006502,
+    0.003082
+   ],
+   "tabdpt_sim_kl_divergence_range": [
+    0.011484,
+    0.004352
+   ],
+   "tabdpt_sim_kl_divergence_std": [
+    0.013993,
+    0.003778
+   ],
+   "tabdpt_sim_loss_mean": [
+    0.0,
+    0.004344
+   ],
+   "tabdpt_sim_loss_range": [
+    0.004818,
+    0.005893
+   ],
+   "tabdpt_sim_loss_std": [
+    0.006759,
+    0.007291
+   ],
+   "tabdpt_sim_max_confidence_mean": [
+    0.001676,
+    0.00395
+   ],
+   "tabdpt_sim_max_confidence_range": [
+    0.0,
+    0.001704
+   ],
+   "tabdpt_sim_max_confidence_std": [
+    0.004143,
+    0.001857
+   ],
+   "tabdpt_sim_prediction_margin_mean": [
+    0.007235,
+    0.0
+   ],
+   "tabdpt_sim_prediction_margin_range": [
+    0.001809,
+    0.001578
+   ],
+   "tabdpt_sim_prediction_margin_std": [
+    0.00199,
+    0.0
+   ],
+   "tabdpt_sim_wasserstein_mean": [
+    0.00177,
+    0.0
+   ],
+   "tabdpt_sim_wasserstein_range": [
+    0.011797,
+    0.008544
+   ],
+   "tabdpt_sim_wasserstein_std": [
+    0.0,
+    0.01935
+   ],
+   "temp_accuracy_mean": [
+    0.001117,
+    0.0
+   ],
+   "temp_chi_squared_mean": [
+    0.0,
+    0.0
+   ],
+   "temp_correct_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "temp_correct_confidence_range": [
+    0.001833,
+    0.00098
+   ],
+   "temp_correct_confidence_std": [
+    0.0,
+    0.00256
+   ],
+   "temp_entropy_mean": [
+    0.0,
+    0.0
+   ],
+   "temp_entropy_range": [
+    0.001025,
+    0.0
+   ],
+   "temp_entropy_std": [
+    0.0,
+    0.001492
+   ],
+   "temp_kl_divergence_mean": [
+    0.100798,
+    0.009679
+   ],
+   "temp_kl_divergence_range": [
+    0.067171,
+    0.006437
+   ],
+   "temp_kl_divergence_std": [
+    0.022725,
+    0.00237
+   ],
+   "temp_loss_mean": [
+    0.005225,
+    0.004197
+   ],
+   "temp_loss_range": [
+    0.005592,
+    0.0
+   ],
+   "temp_loss_std": [
+    0.019353,
+    0.0
+   ],
+   "temp_max_confidence_mean": [
+    0.0,
+    0.0
+   ],
+   "temp_max_confidence_range": [
+    0.002305,
+    0.000861
+   ],
+   "temp_max_confidence_std": [
+    0.0,
+    0.0
+   ],
+   "temp_prediction_margin_mean": [
+    0.0,
+    0.0
+   ],
+   "temp_prediction_margin_range": [
+    0.004783,
+    0.0
+   ],
+   "temp_prediction_margin_std": [
+    0.001411,
+    0.001067
+   ],
+   "temp_wasserstein_mean": [
+    0.0,
+    0.0
+   ],
+   "tserum_accuracy_auc": [
+    0.001345,
+    0.001601
+   ],
+   "tserum_accuracy_early": [
+    0.03349,
+    0.001603
+   ],
+   "tserum_accuracy_gain": [
+    0.00487,
+    0.007899
+   ],
+   "tserum_accuracy_late_gain": [
+    0.010386,
+    0.004707
+   ],
+   "tserum_accuracy_slope": [
+    0.0,
+    0.018629
+   ],
+   "tserum_chi_squared_auc": [
+    0.007809,
+    0.0
+   ],
+   "tserum_chi_squared_early": [
+    0.021295,
+    0.020904
+   ],
+   "tserum_chi_squared_gain": [
+    0.024966,
+    0.004092
+   ],
+   "tserum_chi_squared_late_gain": [
+    0.017701,
+    0.016104
+   ],
+   "tserum_chi_squared_slope": [
+    0.024068,
+    0.0
+   ],
+   "tserum_correct_confidence_auc": [
+    0.00545,
+    0.0
+   ],
+   "tserum_correct_confidence_early": [
+    0.157341,
+    0.035949
+   ],
+   "tserum_correct_confidence_gain": [
+    0.042778,
+    0.0
+   ],
+   "tserum_correct_confidence_late_gain": [
+    0.016623,
+    0.001615
+   ],
+   "tserum_correct_confidence_slope": [
+    0.002605,
+    0.0
+   ],
+   "tserum_entropy_auc": [
+    0.001463,
+    0.0
+   ],
+   "tserum_entropy_early": [
+    0.004764,
+    0.002117
+   ],
+   "tserum_entropy_gain": [
+    0.005063,
+    0.0
+   ],
+   "tserum_entropy_late_gain": [
+    0.017754,
+    0.002792
+   ],
+   "tserum_entropy_slope": [
+    0.004768,
+    0.0
+   ],
+   "tserum_kl2clean_auc": [
+    0.01503,
+    0.0
+   ],
+   "tserum_kl2clean_early": [
+    0.008206,
+    0.005924
+   ],
+   "tserum_kl2clean_gain": [
+    0.014148,
+    0.0
+   ],
+   "tserum_kl2clean_late_gain": [
+    0.0,
+    0.0
+   ],
+   "tserum_kl2clean_slope": [
+    0.0,
+    0.0
+   ],
+   "tserum_kl_divergence_auc": [
+    0.010521,
+    0.009693
+   ],
+   "tserum_kl_divergence_early": [
+    0.127131,
+    0.013566
+   ],
+   "tserum_kl_divergence_gain": [
+    0.015333,
+    0.002547
+   ],
+   "tserum_kl_divergence_late_gain": [
+    0.00186,
+    0.00365
+   ],
+   "tserum_kl_divergence_slope": [
+    0.041912,
+    0.003743
+   ],
+   "tserum_loss_auc": [
+    0.0,
+    0.0
+   ],
+   "tserum_loss_early": [
+    0.026771,
+    0.0
+   ],
+   "tserum_loss_gain": [
+    0.064685,
+    0.001592
+   ],
+   "tserum_loss_late_gain": [
+    0.130742,
+    0.005651
+   ],
+   "tserum_loss_slope": [
+    0.077989,
+    0.0
+   ],
+   "tserum_max_confidence_auc": [
+    0.003893,
+    0.003067
+   ],
+   "tserum_max_confidence_early": [
+    0.05816,
+    0.029203
+   ],
+   "tserum_max_confidence_gain": [
+    0.001053,
+    0.011288
+   ],
+   "tserum_max_confidence_late_gain": [
+    0.003902,
+    0.0
+   ],
+   "tserum_max_confidence_slope": [
+    0.0,
+    0.004526
+   ],
+   "tserum_prediction_margin_auc": [
+    0.003597,
+    0.0
+   ],
+   "tserum_prediction_margin_early": [
+    0.00394,
+    0.0
+   ],
+   "tserum_prediction_margin_gain": [
+    0.001185,
+    0.007075
+   ],
+   "tserum_prediction_margin_late_gain": [
+    0.0066,
+    0.00211
+   ],
+   "tserum_prediction_margin_slope": [
+    0.004175,
+    0.0
+   ],
+   "tserum_rkl2clean_auc": [
+    0.005286,
+    0.008039
+   ],
+   "tserum_rkl2clean_early": [
+    0.005046,
+    0.006758
+   ],
+   "tserum_rkl2clean_gain": [
+    0.005242,
+    0.0
+   ],
+   "tserum_rkl2clean_late_gain": [
+    0.008692,
+    0.004721
+   ],
+   "tserum_rkl2clean_slope": [
+    0.0,
+    0.0
+   ],
+   "tserum_wasserstein_auc": [
+    0.005167,
+    0.001137
+   ],
+   "tserum_wasserstein_early": [
+    0.00194,
+    0.008043
+   ],
+   "tserum_wasserstein_gain": [
+    0.001873,
+    0.001692
+   ],
+   "tserum_wasserstein_late_gain": [
+    0.012081,
+    0.024297
+   ],
+   "tserum_wasserstein_slope": [
+    0.011237,
+    0.002627
+   ],
+   "tshuffle_accuracy_mean": [
+    0.002326,
+    0.022084
+   ],
+   "tshuffle_accuracy_range": [
+    0.002838,
+    0.004925
+   ],
+   "tshuffle_accuracy_std": [
+    0.004276,
+    0.003431
+   ],
+   "tshuffle_chi_squared_mean": [
+    0.007151,
+    0.006091
+   ],
+   "tshuffle_chi_squared_range": [
+    0.004964,
+    0.011038
+   ],
+   "tshuffle_chi_squared_std": [
+    0.005713,
+    0.01465
+   ],
+   "tshuffle_correct_confidence_mean": [
+    0.064827,
+    0.013453
+   ],
+   "tshuffle_correct_confidence_range": [
+    0.013774,
+    0.005225
+   ],
+   "tshuffle_correct_confidence_std": [
+    0.019222,
+    0.0
+   ],
+   "tshuffle_entropy_mean": [
+    0.01408,
+    0.006451
+   ],
+   "tshuffle_entropy_range": [
+    0.006998,
+    0.003966
+   ],
+   "tshuffle_entropy_std": [
+    0.045646,
+    0.0
+   ],
+   "tshuffle_kl_divergence_mean": [
+    0.005567,
+    0.035045
+   ],
+   "tshuffle_kl_divergence_range": [
+    0.004777,
+    0.007267
+   ],
+   "tshuffle_kl_divergence_std": [
+    0.001357,
+    0.009784
+   ],
+   "tshuffle_loss_mean": [
+    0.008022,
+    0.015556
+   ],
+   "tshuffle_loss_range": [
+    0.005014,
+    0.0032
+   ],
+   "tshuffle_loss_std": [
+    0.0,
+    0.0
+   ],
+   "tshuffle_max_confidence_mean": [
+    0.001253,
+    0.002315
+   ],
+   "tshuffle_max_confidence_range": [
+    0.012134,
+    0.0
+   ],
+   "tshuffle_max_confidence_std": [
+    0.005034,
+    0.001579
+   ],
+   "tshuffle_prediction_margin_mean": [
+    0.003083,
+    0.00592
+   ],
+   "tshuffle_prediction_margin_range": [
+    0.003439,
+    0.002655
+   ],
+   "tshuffle_prediction_margin_std": [
+    0.002097,
+    0.003403
+   ],
+   "tshuffle_wasserstein_mean": [
+    0.02582,
+    0.0017
+   ],
+   "tshuffle_wasserstein_range": [
+    0.017414,
+    0.010865
+   ],
+   "tshuffle_wasserstein_std": [
+    0.004073,
+    0.00595
+   ]
+  }
+ }
+}

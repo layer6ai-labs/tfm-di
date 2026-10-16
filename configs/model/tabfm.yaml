@@ -1,0 +1,20 @@
+model: tabfm
+
+# TabFM v1.0.0 (google-research/tabfm). Second "blind" baseline alongside
+# TabPFN-2.5: pre-trained only on synthetic structural-causal-model tables, so
+# it has never seen an OpenML dataset. Weights come from the HuggingFace repo
+# `google/tabfm-1.0.0-pytorch` and must be pre-cached on a login node — compute
+# nodes have no internet.
+#
+# Requires the optional dependency group: `uv sync --extra tabfm`.
+classifier:
+  class_name: TabFMClassifier
+  import_path: di.datasets.tabfm_wrapper:TabFMClassifier
+  has_download_weights: false
+  default_weight_path: null
+
+regressor:
+  class_name: TabFMRegressor
+  import_path: di.datasets.tabfm_wrapper:TabFMRegressor
+  has_download_weights: false
+  default_weight_path: null

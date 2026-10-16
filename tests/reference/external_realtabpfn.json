@@ -1,0 +1,36 @@
+{
+ "realtabpfn": [
+  {
+   "pool": "realtabpfn",
+   "arm": "ALL",
+   "n_cols": 678,
+   "target_cov": 0.9964,
+   "blind_cov": 0.9964,
+   "meta_only_auc": 0.768,
+   "noscreen": {
+    "target_auc": 0.6499,
+    "blind_auc": 0.6512,
+    "gap": -0.0013,
+    "n_selected": 678,
+    "tpr@0.1": 0.0316,
+    "fpr@0.1": 0.056,
+    "target_auc_sd": 0.0591,
+    "blind_auc_sd": 0.0667,
+    "gap_sd": 0.0143,
+    "draws": 10
+   },
+   "screen": {
+    "target_auc": 0.5656,
+    "blind_auc": 0.5805,
+    "gap": -0.0149,
+    "n_selected": 8,
+    "tpr@0.1": 0.2018,
+    "fpr@0.1": 0.1333,
+    "target_auc_sd": 0.0365,
+    "blind_auc_sd": 0.0467,
+    "gap_sd": 0.0204,
+    "draws": 6
+   }
+  }
+ ]
+}

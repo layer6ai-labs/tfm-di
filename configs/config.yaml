@@ -1,0 +1,37 @@
+# Base configuration for DI experiments
+defaults:
+  - attack: single_dataset
+  - dataset: binary_test
+  - experiment: default
+  - model: tabdpt
+  - _self_
+
+# Experiment settings
+seed: 42
+verbose: true
+
+# Output settings
+output:
+  dir: ./experiments/outputs
+  save_predictions: false
+  save_detailed_metrics: true
+  format: json  # json, csv, or both
+
+# Device settings
+device: null  # null for auto-detect, 'cuda', or 'cpu'
+
+# Logging settings
+logging:
+  level: INFO
+  log_to_file: true
+  log_dir: ./experiments/logs
+
+# Hydra settings
+hydra:
+  run:
+    dir: ${hydra:runtime.cwd}/experiments/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${hydra:runtime.cwd}/experiments/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: false  # Don't change working directory

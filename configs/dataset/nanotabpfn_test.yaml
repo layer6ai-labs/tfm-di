@@ -1,0 +1,6 @@
+# Binary DI test config for NanoTabPFN (synthetic datasets only)
+name: nanotabpfn_test
+num_members: 10
+num_non_members: 10
+data: synthetic  # Test synthetic datasets only
+test_size: 0.3

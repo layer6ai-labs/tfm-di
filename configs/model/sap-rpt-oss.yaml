@@ -1,0 +1,14 @@
+model: sap-rpt-oss
+
+# Class definitions with import paths and metadata
+classifier:
+  class_name: SAP_RPT_OSS_ClassifierWrapper
+  import_path: di.datasets.sap_rpt_oss_wrapper:SAP_RPT_OSS_ClassifierWrapper
+  has_download_weights: false
+  default_weight_path: null
+
+regressor:
+  class_name: SAP_RPT_OSS_RegressorWrapper
+  import_path: di.datasets.sap_rpt_oss_wrapper:SAP_RPT_OSS_RegressorWrapper
+  has_download_weights: false
+  default_weight_path: null

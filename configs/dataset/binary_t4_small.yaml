@@ -1,0 +1,9 @@
+# Small evaluation on T4 datasets
+# 10 members + 10 non-members
+
+name: binary_t4_small
+data: t4
+
+num_members: 10
+num_non_members: 10
+test_size: 0.3

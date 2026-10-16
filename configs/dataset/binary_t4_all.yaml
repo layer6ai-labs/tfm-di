@@ -1,0 +1,8 @@
+# All T4 datasets evaluation
+
+name: binary_t4_all
+data: t4
+
+num_members: null  # Use all available
+num_non_members: null  # Use all available
+test_size: 0.3

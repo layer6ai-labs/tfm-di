@@ -1,0 +1,8 @@
+# Full DI config for NanoTabPFN — 50000 + 50000 synthetic datasets
+# (100% of the classification corpus). Expect multi-day wall clock on a
+# single GPU; splitting into a SLURM array is strongly recommended.
+name: nanotabpfn_all
+num_members: 50000
+num_non_members: 50000
+data: synthetic
+test_size: 0.3
