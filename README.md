@@ -4,6 +4,7 @@
 <a href="https://sprintml.com/"><img src="./assets/sprintml.jpg" height="60"></a>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2609.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2609.XXXXX)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-SprintML%2Ftfms-ffd21e.svg)](https://huggingface.co/SprintML/tfms)
 
 # TFM Dataset Inference
 
