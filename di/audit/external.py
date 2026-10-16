@@ -99,7 +99,7 @@ def _one_model(X: np.ndarray, y: np.ndarray, scheme: Scheme, rng: np.random.Gene
     sk, ss = _iforest(Xk[:, sel], Xs[:, sel], int(rng.integers(1 << 30)))
     pv = _conformal_p(sk, ss)
     return {"auc": float(roc_auc_score(yt, ss)), "nsel": int(sel.sum()), "scores": ss,
-            "yt": yt, "columns": sel,
+            "pvals": pv, "yt": yt, "columns": sel,
             "tpr": float((pv <= ALPHA)[yt == 1].mean()),
             "fpr": float((pv <= ALPHA)[yt == 0].mean())}
 

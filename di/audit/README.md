@@ -30,6 +30,9 @@ uv run python -m di.audit external --pool sap --draws 10 --exclude ctx --out res
 uv run python -m di.audit shap --pool sap --scope no:ctx --out results/shap_sap.json
 uv run python -m di.audit shap --pool tabdpt --out results/shap_tabdpt.json
 
+# the result figures (Figures 1-4 and the TabDPT appendix figure) from the same runs
+uv run python -m di.audit figures --data-root data_root --reference-dir tests/reference --out-dir figures
+
 # render
 uv run python -m di.audit tables --internal results/internal*.json --external results/external*.json --shap results/shap*.json --format tex
 
@@ -50,8 +53,9 @@ TFM_DATA_ROOT=data_root TFM_REFERENCE_DIR=tests/reference uv run pytest --fast
 | `external.py` | `evaluate`, `run_external`, the informativeness screen |
 | `contributions.py` | `run_contributions`: fold-averaged mean \|TreeSHAP\| per column for target and blind |
 | `names.py` | `describe`: paper label `<Manipulation>_<Signal>_<Reduction>` and M/S/R codes of a signal column |
+| `figures.py` | `make_all` and the per-figure functions: separation histograms, internal-audit AUC bars, external-audit p-value histograms |
 | `tables.py` | `PUBLISHED` (the four audited models and their pools, parameters and reference files), `published_internal` / `published_external` (the runs behind the tables), `render_internal`, `render_external`, `render_contributions`, `compare`, `reference_internal`, `reference_external` |
-| `cli.py` | the five subcommands |
+| `cli.py` | the six subcommands |
 
 ## Internal audit
 
@@ -126,6 +130,17 @@ of the two importance vectors and the full importance vectors. Scope and folds a
 the internal audit (SAP: `--scope no:ctx`), so the ranking averaged here is the one the audit
 selects top-K from. A column's paper label is `<Manipulation>_<Signal>_<Reduction>` with the
 codes of the paper's manipulation, signal and reduction tables (`names.py`).
+
+## Figures
+
+`figures` draws the paper's result figures from the runs behind the tables, never from a
+separate fit. The single-signal panels show the unmanipulated probe's `base_loss` and
+`base_correct_confidence` per dataset; the multi-signal panel shows the pooled out-of-fold
+P(member) of the published LR cell at its K* (`audit_cell(..., scores=True)`); the AUC bars
+are the TabPFN-2.5 cells of the reference files; the p-value panels are the conformal
+p-values of the first published external draw (`default_rng(7)`) on the screened target
+columns, target and blind. Histograms are normalised per class; legends are written to
+`*_legend_<n>col.pdf`; `figure_data.json` records the AUC behind every panel.
 
 ## Task-type ablation
 

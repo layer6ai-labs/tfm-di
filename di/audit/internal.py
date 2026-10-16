@@ -58,13 +58,28 @@ def _bootstrap(y: np.ndarray, pt: np.ndarray, pb: np.ndarray, idx: np.ndarray,
             "blind_sd": round(float(bl.std()), 4), "p_gap_le_0": round(float(np.mean(g <= 0)), 4)}
 
 
+def cell_inputs(pool: PoolData, cols: Sequence[int], folds: int = 5
+                ) -> tuple[np.ndarray, np.ndarray, Folds, list[np.ndarray]] | None:
+    """Usable target/blind columns of ``cols``, the folds and the per-fold TreeSHAP
+    ranking on the target; ``None`` when no column is usable."""
+    Xt, Xb = pool.Xt[:, cols], pool.Xb[:, cols]
+    ok = _usable(Xt, Xb)
+    if not ok.any():
+        return None
+    fold_list = _folds(pool.y, folds)
+    ranks = [rank_treeshap(Xt[:, ok][tr], pool.y[tr]) for tr, _ in fold_list]
+    return Xt[:, ok], Xb[:, ok], fold_list, ranks
+
+
 def audit_cell(Xt: np.ndarray, Xb: np.ndarray, y: np.ndarray, kind: str, ks: Sequence[int],
                folds: Folds, ranks: list[np.ndarray], rng: np.random.Generator,
-               nboot: int = 2000, tabpfn: ClassifierMixin | None = None) -> dict:
+               nboot: int = 2000, tabpfn: ClassifierMixin | None = None,
+               scores: bool = False) -> dict:
     """Top-K curve, elbow K* and paired bootstrap for one cell.
 
     ``Xt``/``Xb`` are the usable columns of the cell, ``ranks`` their per-fold TreeSHAP
-    order. Returns K, target/blind AUC, gap, bootstrap sds and the AUC curve.
+    order. Returns K, target/blind AUC, gap, bootstrap sds and the AUC curve; with
+    ``scores`` also the pooled out-of-fold target and blind scores at K*.
     """
     cur = {}
     for K in [k for k in ks if k <= Xt.shape[1]]:
@@ -86,6 +101,8 @@ def audit_cell(Xt: np.ndarray, Xb: np.ndarray, y: np.ndarray, kind: str, ks: Seq
     out.update(_bootstrap(y, pt, pb, idx, keep))
     out["nboot_used"] = len(keep)
     out["curve"] = {int(k): [round(float(cur[k][2]), 4), round(float(cur[k][3]), 4)] for k in Ks}
+    if scores:
+        out["scores"] = {"target": pt.tolist(), "blind": pb.tolist()}
     return out
 
 
@@ -105,7 +122,6 @@ def run_internal(pool: PoolData, kinds: Sequence[str] = ("lr", "xgb"),
         raise ValueError(f"unknown kinds {sorted(unknown)}; expected a subset of {KINDS}")
     y = pool.y
     base = select(pool.signals, scope)
-    fold_list = _folds(y, folds)
     tabpfn = make_tabpfn(device) if "tabpfn" in kinds else None
     scopes = [(scope, base)]
     if families:
@@ -115,23 +131,21 @@ def run_internal(pool: PoolData, kinds: Sequence[str] = ("lr", "xgb"),
         scopes += [(f, c) for f, c in sorted(fams.items()) if len(c) >= min_family]
     cells = {}
     for name, cols in scopes:
-        Xt, Xb = pool.Xt[:, cols], pool.Xb[:, cols]
-        ok = _usable(Xt, Xb)
         cells[name] = {"n_cols": len(cols)}
-        ranks = [rank_treeshap(Xt[:, ok][tr], y[tr]) for tr, _ in fold_list] if ok.any() else None
+        inputs = cell_inputs(pool, cols, folds)
         for kind in kinds:
-            if ranks is None:
+            if inputs is None:
                 cells[name][kind] = None
                 continue
+            Xt, Xb, fold_list, ranks = inputs
             rng = np.random.default_rng([seed, zlib.crc32(f"{pool.name}|{name}|{kind}".encode())])
-            cells[name][kind] = audit_cell(Xt[:, ok], Xb[:, ok], y, kind, ks, fold_list, ranks,
-                                           rng, nboot, tabpfn)
+            cells[name][kind] = audit_cell(Xt, Xb, y, kind, ks, fold_list, ranks, rng, nboot, tabpfn)
             if log:
                 c = cells[name][kind]
                 log(f"{pool.name:18s} {name:12s} {kind:6s} K={c['K']:<3d} "
                     f"{c['target']:.4f}/{c['blind']:.4f} gap {c['gap']:+.4f}+-{c['gap_sd']:.4f}")
     meta = {"pool": pool.name, "n": int(len(y)), "n_member": pool.n_member,
             "n_signals": len(pool.signals), "scope": scope, "n_cols": len(base),
-            "folds": len(fold_list), "nboot": nboot, "ks": list(ks), "kinds": list(kinds),
+            "folds": len(_folds(y, folds)), "nboot": nboot, "ks": list(ks), "kinds": list(kinds),
             "seed": seed}
     return {"meta": meta, "cells": cells}

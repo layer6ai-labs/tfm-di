@@ -1,4 +1,4 @@
-"""Command line: ``python -m di.audit {internal,external,shap,tables,reproduce}``."""
+"""Command line: ``python -m di.audit {internal,external,shap,tables,reproduce,figures}``."""
 from __future__ import annotations
 
 import argparse
@@ -12,6 +12,7 @@ from sklearn.exceptions import ConvergenceWarning
 from di.audit import tables
 from di.audit.contributions import run_contributions
 from di.audit.external import run_external
+from di.audit.figures import make_all
 from di.audit.internal import DEFAULT_KS, run_internal
 from di.audit.pools import POOLS, load
 from di.audit.tables import PUBLISHED
@@ -59,6 +60,11 @@ def cmd_shap(a: argparse.Namespace) -> None:
     if a.format:
         for name, r in out.items():
             print(tables.render_contributions(r, a.format))
+
+
+def cmd_figures(a: argparse.Namespace) -> None:
+    make_all(a.data_root, a.reference_dir, a.out_dir, log=_log)
+    _log(f"wrote figures to {a.out_dir}")
 
 
 def cmd_tables(a: argparse.Namespace) -> None:
@@ -161,6 +167,12 @@ def main(argv: Sequence[str] | None = None) -> None:
     p.add_argument("--format", choices=("md", "tex"), default="md")
     p.add_argument("--out", default=None)
     p.set_defaults(func=cmd_tables)
+
+    p = sub.add_parser("figures", help="the result figures of the paper (PDF + separate legends)")
+    p.add_argument("--data-root", default=DATA_ROOT_DEFAULT)
+    p.add_argument("--reference-dir", default="tests/reference", help="internal reference files for the AUC bars")
+    p.add_argument("--out-dir", default="figures")
+    p.set_defaults(func=cmd_figures)
 
     p = sub.add_parser("reproduce", help="re-run the LR/XGB and external cells of the published "
                                          "table and compare them to the reference files")
