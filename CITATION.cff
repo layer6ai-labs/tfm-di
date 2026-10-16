@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this software or the released signal tables, please cite the paper below."
+title: "TFM Dataset Inference"
+type: software
+repository-code: "https://github.com/layer6ai-labs/tfm-di"
+url: "https://huggingface.co/SprintML/tfms"
+license: Apache-2.0
+keywords:
+  - dataset inference
+  - membership inference
+  - tabular foundation models
+  - privacy auditing
+  - data provenance
+authors:
+  - given-names: Dariush
+    family-names: Wahdany
+    affiliation: CISPA Helmholtz Center for Information Security
+  - given-names: Jesse C.
+    family-names: Cresswell
+    affiliation: Layer 6 AI
+  - given-names: Naiqing
+    family-names: Guan
+    affiliation: Layer 6 AI
+  - given-names: Atiyeh
+    family-names: Ashari Ghomi
+    affiliation: Layer 6 AI
+  - given-names: Franziska
+    family-names: Boenisch
+    affiliation: CISPA Helmholtz Center for Information Security
+  - given-names: Adam
+    family-names: Dziedzic
+    affiliation: CISPA Helmholtz Center for Information Security
+preferred-citation:
+  type: article
+  title: "Dataset Inference for Data Provenance and Privacy Auditing in Tabular Foundation Models"
+  journal: arXiv
+  year: 2026
+  # add the arXiv identifier once assigned, e.g.
+  # identifiers:
+  #   - type: other
+  #     value: "arXiv:2609.XXXXX"
+  authors:
+    - given-names: Dariush
+      family-names: Wahdany
+    - given-names: Jesse C.
+      family-names: Cresswell
+    - given-names: Naiqing
+      family-names: Guan
+    - given-names: Atiyeh
+      family-names: Ashari Ghomi
+    - given-names: Franziska
+      family-names: Boenisch
+    - given-names: Adam
+      family-names: Dziedzic
