@@ -3,7 +3,7 @@
 <a href="https://layer6.ai/"><img src="./assets/layer6.jpg" height="66"></a>
 <a href="https://sprintml.com/"><img src="./assets/sprintml.jpg" height="60"></a>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2609.XXXXX-b31b1b.svg)](https://arxiv.org/abs/2609.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.24278-b31b1b.svg)](https://arxiv.org/abs/2610.24278)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-SprintML%2Ftfms-ffd21e.svg)](https://huggingface.co/SprintML/tfms)
 
 # TFM Dataset Inference
@@ -190,7 +190,7 @@ If you find this repository useful, please cite the paper as follows
       title={Dataset Inference for Data Provenance and Privacy Auditing in Tabular Foundation Models}, 
       author={Dariush Wahdany and Jesse C. Cresswell and Naiqing Guan and Atiyeh Ashari Ghomi and Franziska Boenisch and Adam Dziedzic},
       year={2026},
-      journal={arXiv:2609.XXXXX}
+      journal={arXiv:2610.24278}
 }
 ```
 
