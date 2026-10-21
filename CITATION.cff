@@ -35,10 +35,9 @@ preferred-citation:
   title: "Dataset Inference for Data Provenance and Privacy Auditing in Tabular Foundation Models"
   journal: arXiv
   year: 2026
-  # add the arXiv identifier once assigned, e.g.
-  # identifiers:
-  #   - type: other
-  #     value: "arXiv:2609.XXXXX"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.24278"
   authors:
     - given-names: Dariush
       family-names: Wahdany
